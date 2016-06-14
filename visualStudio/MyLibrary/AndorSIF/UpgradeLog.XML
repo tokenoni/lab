@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="AndorSIF">
+</Property><Property Name="ソリューション ファイル" Value="D:\MyDocument\MyDropbox\visual_studio\andor\AndorSIF\AndorSIF.sln">
+</Property><Property Name="ユーザー オプション ファイル" Value="D:\MyDocument\MyDropbox\visual_studio\andor\AndorSIF\AndorSIF.suo">
+</Property><Property Name="Date" Value="2011年1月2日">
+</Property><Property Name="Time" Value="10:32">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="AndorSIF.sln" Description="ファイルは正常に D:\MyDocument\MyDropbox\visual_studio\andor\AndorSIF\AndorSIF.sln.old としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="" Source="AndorSIF.suo" Description="ファイルは正常に D:\MyDocument\MyDropbox\visual_studio\andor\AndorSIF\AndorSIF.suo.old としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="AndorSIF" Source="AndorSIF.vcproj" Description="Converting project file 'D:\MyDocument\MyDropbox\visual_studio\andor\AndorSIF\AndorSIF.vcproj'.">
+</Event><Event ErrorLevel="1" Project="AndorSIF" Source="AndorSIF.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="AndorSIF" Source="AndorSIF.vcproj" Description="Done converting to new project file 'D:\MyDocument\MyDropbox\visual_studio\andor\AndorSIF\AndorSIF.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="AndorSIF" Source="AndorSIF.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="AndorSIF.sln" Description="ソリューションは正常に変換されました">
+</Event><Event ErrorLevel="3" Project="" Source="AndorSIF.sln" Description="Converted">
+</Event></UpgradeLog>

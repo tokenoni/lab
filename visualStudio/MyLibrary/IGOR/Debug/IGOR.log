@@ -1,0 +1,36 @@
+﻿2011/08/27 17:46:33 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\IGOR.vcxproj" (rebuild ターゲット)。
+     1>_PrepareForClean:
+         ファイル "Debug\IGOR.lastbuildstate" を削除しています。
+       InitializeBuildStatus:
+         "AlwaysCreate" が指定されたため "Debug\IGOR.unsuccessfulbuild" を作成しています。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\program files\microsoft visual studio 10.0\vc\include\igor\base_functions\crossplatformfileio.inl(123): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\stdio.h(234) : 'fopen' の宣言を確認してください。
+     1>c:\program files\microsoft visual studio 10.0\vc\include\igor\base_functions\readwave.inl(426): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : 'strcpy' の宣言を確認してください。
+     1>c:\program files\microsoft visual studio 10.0\vc\include\igor\base_functions\readwave.inl(437): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : 'strcpy' の宣言を確認してください。
+     1>c:\program files\microsoft visual studio 10.0\vc\include\igor\igoribw.inl(18): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : 'strcpy' の宣言を確認してください。
+                 d:\mydocument\my dropbox\visual_studio\mylibrary\igor\main.cpp(20) : コンパイルされたクラスの テンプレート のインスタンス化 'bool IGORdata::write_ibw_onedim_double<std::vector<_Ty>>(const Ty_ &,const size_t,const std::string &,const std::string &,const std::string &)' の参照を確認してください
+                 with
+                 [
+                     _Ty=int,
+                     Ty_=std::vector<int>
+                 ]
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\Debug\IGOR.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\IGOR.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\Debug\IGOR.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\Debug\IGOR.lib" /MACHINE:X86 Debug\main.obj
+         IGOR.vcxproj -> D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\Debug\IGOR.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\Debug\IGOR.exe;#1" /manifest Debug\IGOR.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         ファイル "Debug\IGOR.unsuccessfulbuild" を削除しています。
+         "Debug\IGOR.lastbuildstate" のタッチ タスクを実行しています。
+     1>プロジェクト "D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\IGOR.vcxproj" (rebuild ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:03.18

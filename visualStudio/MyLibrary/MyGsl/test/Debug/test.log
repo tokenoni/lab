@@ -1,0 +1,26 @@
+﻿2011/05/12 1:41:12 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Documents and Settings\fujii\My Documents\My Dropbox\visual_studio\MyLibrary\MyGsl\test\test.vcxproj" (rebuild ターゲット)。
+     1>_PrepareForClean:
+         ファイル "Debug\test.lastbuildstate" を削除しています。
+       InitializeBuildStatus:
+         "AlwaysCreate" が指定されたため "Debug\test.unsuccessfulbuild" を作成しています。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\documents and settings\fujii\my documents\my dropbox\visual_studio\mylibrary\mygsl\test\main.cpp(64): warning C4101: 'j' : ローカル変数は 1 度も使われていません。
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Documents and Settings\fujii\My Documents\My Dropbox\visual_studio\MyLibrary\MyGsl\test\Debug\test.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Documents and Settings\fujii\My Documents\My Dropbox\visual_studio\MyLibrary\MyGsl\test\Debug\test.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Documents and Settings\fujii\My Documents\My Dropbox\visual_studio\MyLibrary\MyGsl\test\Debug\test.lib" /MACHINE:X86 Debug\main.obj
+         ..\..\..\gsl_lib_Win32\cblas.lib
+         ..\..\..\gsl_lib_Win32\gsl.lib
+     1>LINK : warning LNK4098: defaultlib 'LIBCMT' は他のライブラリの使用と競合しています。/NODEFAULTLIB:library を使用してください。
+         test.vcxproj -> C:\Documents and Settings\fujii\My Documents\My Dropbox\visual_studio\MyLibrary\MyGsl\test\Debug\test.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Documents and Settings\fujii\My Documents\My Dropbox\visual_studio\MyLibrary\MyGsl\test\Debug\test.exe;#1" /manifest Debug\test.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         ファイル "Debug\test.unsuccessfulbuild" を削除しています。
+         "Debug\test.lastbuildstate" のタッチ タスクを実行しています。
+     1>プロジェクト "C:\Documents and Settings\fujii\My Documents\My Dropbox\visual_studio\MyLibrary\MyGsl\test\test.vcxproj" (rebuild ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:02.14

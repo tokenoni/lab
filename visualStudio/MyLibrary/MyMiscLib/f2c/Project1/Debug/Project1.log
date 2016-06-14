@@ -1,0 +1,289 @@
+﻿Build started 2013/03/05 17:28:17.
+     1>Project "C:\Users\KeisukeFujii\Dropbox\visual_studio\f2c\Project1\Project1.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt ..\libf2c\abort_.c ..\libf2c\arithchk.c ..\libf2c\backspac.c ..\libf2c\cabs.c ..\libf2c\close.c ..\libf2c\ctype.c ..\libf2c\c_abs.c ..\libf2c\c_cos.c ..\libf2c\c_div.c ..\libf2c\c_exp.c ..\libf2c\c_log.c ..\libf2c\c_sin.c ..\libf2c\c_sqrt.c ..\libf2c\derfc_.c ..\libf2c\derf_.c ..\libf2c\dfe.c ..\libf2c\dolio.c ..\libf2c\dtime_.c ..\libf2c\due.c ..\libf2c\d_abs.c ..\libf2c\d_acos.c ..\libf2c\d_asin.c ..\libf2c\d_atan.c ..\libf2c\d_atn2.c ..\libf2c\d_cnjg.c ..\libf2c\d_cos.c ..\libf2c\d_cosh.c ..\libf2c\d_dim.c ..\libf2c\d_exp.c ..\libf2c\d_imag.c ..\libf2c\d_int.c ..\libf2c\d_lg10.c ..\libf2c\d_log.c ..\libf2c\d_mod.c ..\libf2c\d_nint.c ..\libf2c\d_prod.c ..\libf2c\d_sign.c ..\libf2c\d_sin.c ..\libf2c\d_sinh.c ..\libf2c\d_sqrt.c ..\libf2c\d_tan.c ..\libf2c\d_tanh.c ..\libf2c\ef1asc_.c ..\libf2c\ef1cmc_.c ..\libf2c\endfile.c ..\libf2c\erfc_.c ..\libf2c\erf_.c ..\libf2c\err.c ..\libf2c\etime_.c ..\libf2c\exit_.c ..\libf2c\f77vers.c ..\libf2c\f77_aloc.c ..\libf2c\fmt.c ..\libf2c\fmtlib.c ..\libf2c\ftell64_.c ..\libf2c\ftell_.c ..\libf2c\getarg_.c ..\libf2c\getenv_.c ..\libf2c\hl_ge.c ..\libf2c\hl_gt.c ..\libf2c\hl_le.c ..\libf2c\hl_lt.c ..\libf2c\h_abs.c ..\libf2c\h_dim.c ..\libf2c\h_dnnt.c ..\libf2c\h_indx.c ..\libf2c\h_len.c ..\libf2c\h_mod.c ..\libf2c\h_nint.c ..\libf2c\h_sign.c ..\libf2c\i77vers.c ..\libf2c\iargc_.c ..\libf2c\iio.c ..\libf2c\ilnw.c ..\libf2c\inquire.c ..\libf2c\i_abs.c ..\libf2c\i_dim.c ..\libf2c\i_dnnt.c ..\libf2c\i_indx.c ..\libf2c\i_len.c ..\libf2c\i_mod.c ..\libf2c\i_nint.c ..\libf2c\i_sign.c ..\libf2c\lbitbits.c ..\libf2c\lbitshft.c ..\libf2c\lread.c ..\libf2c\lwrite.c ..\libf2c\l_ge.c ..\libf2c\l_gt.c ..\libf2c\l_le.c ..\libf2c\l_lt.c ..\libf2c\main.c ..\libf2c\open.c ..\libf2c\pow_ci.c ..\libf2c\pow_dd.c ..\libf2c\pow_di.c ..\libf2c\pow_hh.c ..\libf2c\pow_ii.c ..\libf2c\pow_qq.c ..\libf2c\pow_ri.c ..\libf2c\pow_zi.c ..\libf2c\pow_zz.c ..\libf2c\qbitbits.c ..\libf2c\qbitshft.c ..\libf2c\rdfmt.c ..\libf2c\rewind.c ..\libf2c\rsfe.c ..\libf2c\rsli.c ..\libf2c\rsne.c ..\libf2c\r_abs.c ..\libf2c\r_acos.c ..\libf2c\r_asin.c ..\libf2c\r_atan.c ..\libf2c\r_atn2.c ..\libf2c\r_cnjg.c ..\libf2c\r_cos.c ..\libf2c\r_cosh.c ..\libf2c\r_dim.c ..\libf2c\r_exp.c ..\libf2c\r_imag.c ..\libf2c\r_int.c ..\libf2c\r_lg10.c ..\libf2c\r_log.c ..\libf2c\r_mod.c ..\libf2c\r_nint.c ..\libf2c\r_sign.c ..\libf2c\r_sin.c ..\libf2c\r_sinh.c ..\libf2c\r_sqrt.c ..\libf2c\r_tan.c ..\libf2c\r_tanh.c ..\libf2c\sfe.c ..\libf2c\signal_.c ..\libf2c\signbit.c ..\libf2c\sig_die.c ..\libf2c\sue.c ..\libf2c\system_.c ..\libf2c\s_cat.c ..\libf2c\s_cmp.c ..\libf2c\s_copy.c ..\libf2c\s_paus.c ..\libf2c\s_rnge.c ..\libf2c\s_stop.c ..\libf2c\typesize.c ..\libf2c\uio.c ..\libf2c\uninit.c ..\libf2c\util.c ..\libf2c\wref.c ..\libf2c\wrtfmt.c ..\libf2c\wsfe.c ..\libf2c\wsle.c ..\libf2c\wsne.c ..\libf2c\xwsne.c ..\libf2c\z_abs.c ..\libf2c\z_cos.c ..\libf2c\z_div.c ..\libf2c\z_exp.c ..\libf2c\z_log.c ..\libf2c\z_sin.c ..\libf2c\z_sqrt.c
+         z_sqrt.c
+         z_sin.c
+         z_log.c
+         z_exp.c
+         z_div.c
+         z_cos.c
+         z_abs.c
+         xwsne.c
+         wsne.c
+         wsle.c
+         wsfe.c
+         wrtfmt.c
+         wref.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\wref.c(90): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\wref.c(117): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\wref.c(119): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\wref.c(246): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+         util.c
+         uninit.c
+         uio.c
+         typesize.c
+         s_stop.c
+         s_rnge.c
+         s_paus.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\s_paus.c(65): warning C4996: 'fileno': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _fileno. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(711) : see declaration of 'fileno'
+         Generating Code...
+         Compiling...
+         s_copy.c
+         s_cmp.c
+         s_cat.c
+         system_.c
+         sue.c
+         sig_die.c
+         signbit.c
+         signal_.c
+         sfe.c
+         r_tanh.c
+         r_tan.c
+         r_sqrt.c
+         r_sinh.c
+         r_sin.c
+         r_sign.c
+         r_nint.c
+         r_mod.c
+         r_log.c
+         r_lg10.c
+         r_int.c
+         Generating Code...
+         Compiling...
+         r_imag.c
+         r_exp.c
+         r_dim.c
+         r_cosh.c
+         r_cos.c
+         r_cnjg.c
+         r_atn2.c
+         r_atan.c
+         r_asin.c
+         r_acos.c
+         r_abs.c
+         rsne.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\rsne.c(71): warning C4273: 'ungetc' : inconsistent dll linkage
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(331) : see previous definition of 'ungetc'
+         rsli.c
+         rsfe.c
+         rewind.c
+         rdfmt.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\rdfmt.c(71): warning C4554: '>>' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\rdfmt.c(93): warning C4554: '<<' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\rdfmt.c(382): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\rdfmt.c(389): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+         qbitshft.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitshft.c(10): error C2061: syntax error : identifier 'qbit_shift'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitshft.c(10): error C2059: syntax error : ';'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitshft.c(10): error C2146: syntax error : missing ')' before identifier 'a'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitshft.c(10): error C2061: syntax error : identifier 'a'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitshft.c(10): error C2059: syntax error : ','
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitshft.c(10): error C2059: syntax error : ')'
+         qbitbits.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(18): error C2061: syntax error : identifier 'qbit_bits'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(18): error C2059: syntax error : ';'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(18): error C2146: syntax error : missing ')' before identifier 'a'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(18): error C2061: syntax error : identifier 'a'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(18): error C2059: syntax error : ','
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(18): error C2059: syntax error : ')'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(36): error C2061: syntax error : identifier 'qbit_cshift'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(36): error C2059: syntax error : ';'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(36): error C2146: syntax error : missing ')' before identifier 'a'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(36): error C2061: syntax error : identifier 'a'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(36): error C2059: syntax error : ','
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\qbitbits.c(36): error C2059: syntax error : ')'
+         pow_zz.c
+         pow_zi.c
+         Generating Code...
+         Compiling...
+         pow_ri.c
+         pow_qq.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\pow_qq.c(9): error C2061: syntax error : identifier 'pow_qq'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\pow_qq.c(9): error C2059: syntax error : ';'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\pow_qq.c(9): error C2143: syntax error : missing ')' before '*'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\pow_qq.c(9): error C2143: syntax error : missing '{' before '*'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\pow_qq.c(9): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\pow_qq.c(9): error C2059: syntax error : ')'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\pow_qq.c(11): error C2054: expected '(' to follow 'bp'
+         pow_ii.c
+         pow_hh.c
+         pow_di.c
+         pow_dd.c
+         pow_ci.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\pow_ci.c(21): warning C4244: '=' : conversion from 'doublereal' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\pow_ci.c(22): warning C4244: '=' : conversion from 'doublereal' to 'real', possible loss of data
+         open.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\open.c(8): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         main.c
+         l_lt.c
+         l_le.c
+         l_gt.c
+         l_ge.c
+         lwrite.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lwrite.c(137): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+         lread.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lread.c(79): warning C4273: 'ungetc' : inconsistent dll linkage
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(331) : see previous definition of 'ungetc'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lread.c(220): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(357) : see declaration of 'sprintf'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lread.c(751): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lread.c(758): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lread.c(759): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+         lbitshft.c
+         lbitbits.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lbitbits.c(47): warning C4554: '>>' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lbitbits.c(51): warning C4554: '<<' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lbitbits.c(60): warning C4554: '>>' : check operator precedence for possible error; use parentheses to clarify precedence
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\lbitbits.c(64): warning C4554: '<<' : check operator precedence for possible error; use parentheses to clarify precedence
+         i_sign.c
+         i_nint.c
+         i_mod.c
+         Generating Code...
+         Compiling...
+         i_len.c
+         i_indx.c
+         i_dnnt.c
+         i_dim.c
+         i_abs.c
+         inquire.c
+         ilnw.c
+         iio.c
+         iargc_.c
+         i77vers.c
+         h_sign.c
+         h_nint.c
+         h_mod.c
+         h_len.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\h_len.c(12): warning C4244: 'return' : conversion from 'ftnlen' to 'shortint', possible loss of data
+         h_indx.c
+         h_dnnt.c
+         h_dim.c
+         h_abs.c
+         hl_lt.c
+         hl_le.c
+         Generating Code...
+         Compiling...
+         hl_gt.c
+         hl_ge.c
+         getenv_.c
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(893): warning C4005: 'max' : macro redefinition
+                 c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\f2c.h(160) : see previous definition of 'max'
+     1>c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(894): warning C4005: 'min' : macro redefinition
+                 c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\f2c.h(159) : see previous definition of 'min'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\getenv_.c(42): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(449) : see declaration of 'getenv'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\getenv_.c(48): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(191) : see declaration of 'strncpy'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\getenv_.c(50): warning C4996: 'getenv': This function or variable may be unsafe. Consider using _dupenv_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdlib.h(449) : see declaration of 'getenv'
+         getarg_.c
+         ftell_.c
+         ftell64_.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(23): error C2061: syntax error : identifier 'ftell64_'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(23): error C2059: syntax error : ';'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(23): error C2059: syntax error : 'type'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(34): error C2143: syntax error : missing ')' before '*'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(34): error C2081: 'longint' : name in formal parameter list illegal
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(34): error C2143: syntax error : missing '{' before '*'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(34): warning C4142: benign redefinition of type
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(34): error C2370: 'integer' : redefinition; different storage class
+                 c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\f2c.h(10) : see declaration of 'integer'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(34): error C2143: syntax error : missing ';' before '*'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(34): error C2059: syntax error : ')'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\ftell64_.c(36): error C2054: expected '(' to follow 'whence'
+         fmtlib.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\fmtlib.c(42): warning C4244: '=' : conversion from 'unsigned long' to 'char', possible loss of data
+         fmt.c
+         f77_aloc.c
+         f77vers.c
+         exit_.c
+         etime_.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\etime_.c(16): fatal error C1083: Cannot open include file: 'sys/times.h': No such file or directory
+         err.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\err.c(21): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         erf_.c
+         erfc_.c
+         endfile.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\endfile.c(13): fatal error C1083: Cannot open include file: 'unistd.h': No such file or directory
+         ef1cmc_.c
+         ef1asc_.c
+         d_tanh.c
+         d_tan.c
+         Generating Code...
+         Compiling...
+         d_sqrt.c
+         d_sinh.c
+         d_sin.c
+         d_sign.c
+         d_prod.c
+         d_nint.c
+         d_mod.c
+         d_log.c
+         d_lg10.c
+         d_int.c
+         d_imag.c
+         d_exp.c
+         d_dim.c
+         d_cosh.c
+         d_cos.c
+         d_cnjg.c
+         d_atn2.c
+         d_atan.c
+         d_asin.c
+         d_acos.c
+         Generating Code...
+         Compiling...
+         d_abs.c
+         due.c
+         dtime_.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\dtime_.c(16): fatal error C1083: Cannot open include file: 'sys/times.h': No such file or directory
+         dolio.c
+         dfe.c
+         derf_.c
+         derfc_.c
+         c_sqrt.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_sqrt.c(25): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_sqrt.c(27): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_sqrt.c(34): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_sqrt.c(36): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+         c_sin.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_sin.c(18): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_sin.c(19): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+         c_log.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_log.c(18): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_log.c(19): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+         c_exp.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_exp.c(20): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_exp.c(21): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+         c_div.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_div.c(39): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_div.c(47): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_div.c(49): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+         c_cos.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_cos.c(18): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\c_cos.c(19): warning C4244: '=' : conversion from 'double' to 'real', possible loss of data
+         c_abs.c
+         ctype.c
+         close.c
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\close.c(21): warning C4273: 'unlink' : inconsistent dll linkage
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(285) : see previous definition of 'unlink'
+     1>c:\users\keisukefujii\dropbox\visual_studio\f2c\libf2c\close.c(59): warning C4996: 'unlink': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _unlink. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\stdio.h(285) : see declaration of 'unlink'
+         cabs.c
+         backspac.c
+         arithchk.c
+         abort_.c
+         Generating Code...
+     1>Done Building Project "C:\Users\KeisukeFujii\Dropbox\visual_studio\f2c\Project1\Project1.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:05.19

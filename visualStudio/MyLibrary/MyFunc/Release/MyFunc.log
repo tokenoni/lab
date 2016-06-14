@@ -1,0 +1,24 @@
+﻿Build started 09/29/12 5:14:43 PM.
+     1>Project "C:\Users\Keisuke\Dropbox\visual_studio\MyLibrary\MyFunc\MyFunc.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.0\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /O2 /Oy- /GL /D WIN32 /D NDEBUG /D _UNICODE /D UNICODE /EHa /MD /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc110.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /analyze- /errorReport:prompt /clr:nostdlib main.cpp
+         main.cpp
+     1>c:\users\keisuke\dropbox\visual_studio\mylibrary\myfunc\fmath.hpp(566): warning C4244: 'argument' : conversion from 'const fmath::local::uint64_t' to 'double', possible loss of data
+     1>c:\users\keisuke\dropbox\visual_studio\mylibrary\myfunc\fmath.hpp(574): warning C4244: 'argument' : conversion from 'const fmath::local::uint64_t' to 'double', possible loss of data
+     1>c:\users\keisuke\dropbox\visual_studio\mylibrary\myfunc\fmath.hpp(149): warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+                 c:\users\keisuke\dropbox\visual_studio\mylibrary\myfunc\fmath.hpp(134) : while compiling class template member function 'fmath::local::ExpVar<>::ExpVar(void)'
+                 C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\include\xmemory0(627) : see reference to function template instantiation 'fmath::local::ExpVar<>::ExpVar(void)' being compiled
+                 c:\users\keisuke\dropbox\visual_studio\mylibrary\myfunc\fmath.hpp(465) : see reference to class template instantiation 'fmath::local::ExpVar<>' being compiled
+                 c:\users\keisuke\dropbox\visual_studio\mylibrary\myfunc\fmath.hpp(494) : see reference to class template instantiation 'fmath::local::C<>' being compiled
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Keisuke\Dropbox\visual_studio\MyLibrary\MyFunc\Release\MyFunc.exe" /INCREMENTAL:NO /NOLOGO /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Keisuke\Dropbox\visual_studio\MyLibrary\MyFunc\Release\MyFunc.pdb" /LTCG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /SAFESEH Release\main.obj
+         "Release\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         ..\..\cblas.lib
+         ..\..\gsl.lib
+         LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
+         MyFunc.vcxproj -> C:\Users\Keisuke\Dropbox\visual_studio\MyLibrary\MyFunc\Release\MyFunc.exe
+     1>Done Building Project "C:\Users\Keisuke\Dropbox\visual_studio\MyLibrary\MyFunc\MyFunc.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.05

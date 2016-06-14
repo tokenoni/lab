@@ -1,0 +1,108 @@
+iptcutil.o iptcutil.o:  \
+ ../../../tiff-3.8.2-src/contrib/iptcutil/iptcutil.c \
+  ../../libtiff/tif_config.h g:/mingw/3.3.1/include/stdio.h \
+  g:/mingw/3.3.1/include/_mingw.h g:/mingw/3.3.1/include/stddef.h \
+  g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stddef.h \
+  g:/glibc/include/winx/stddefx.h g:/mingw/3.3.1/include/stdarg.h \
+  g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stdarg.h \
+  g:/glibc/include/winx/stdargx.h g:/glibc/include/winx/stdiox.h \
+  g:/glibc/include/features.h g:/glibc/include/sys/cdefs.h \
+  g:/glibc/include/gnu/stubs.h g:/mingw/3.3.1/include/errno.h \
+  g:/glibc/include/winx/errnox.h g:/mingw/3.3.1/include/sys/types.h \
+  g:/glibc/include/winx/sys/typesx.h g:/glibc/include/bits/types.h \
+  g:/glibc/include/bits/wordsize.h g:/glibc/include/bits/typesizes.h \
+  g:/glibc/include/sys/sysmacros.h g:/glibc/include/stdio_ext.h \
+  g:/glibc/include/winx/pathx.h g:/mingw/3.3.1/include/stdlib.h \
+  g:/glibc/include/winx/stdlibx.h g:/mingw/3.3.1/include/stdint.h \
+  g:/glibc/include/winx/stdintx.h g:/mingw/3.3.1/include/string.h \
+  g:/glibc/include/winx/stringx.h g:/mingw/3.3.1/include/memory.h \
+  g:/mingw/3.3.1/include/ctype.h g:/glibc/include/winx/ctypex.h \
+  g:/glibc/include/endian.h g:/glibc/include/bits/endian.h \
+  g:/mingw/3.3.1/include/strings.h g:/mingw/3.3.1/include/fcntl.h \
+  g:/mingw/3.3.1/include/io.h g:/glibc/include/winx/iox.h \
+  g:/mingw/3.3.1/include/getopt.h g:/glibc/include/winx/getoptx.h \
+  g:/glibc/include/winx/fcntlx.h g:/glibc/include/bits/fcntl.h
+
+../../libtiff/tif_config.h:
+
+g:/mingw/3.3.1/include/stdio.h:
+
+g:/mingw/3.3.1/include/_mingw.h:
+
+g:/mingw/3.3.1/include/stddef.h:
+
+g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stddef.h:
+
+g:/glibc/include/winx/stddefx.h:
+
+g:/mingw/3.3.1/include/stdarg.h:
+
+g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stdarg.h:
+
+g:/glibc/include/winx/stdargx.h:
+
+g:/glibc/include/winx/stdiox.h:
+
+g:/glibc/include/features.h:
+
+g:/glibc/include/sys/cdefs.h:
+
+g:/glibc/include/gnu/stubs.h:
+
+g:/mingw/3.3.1/include/errno.h:
+
+g:/glibc/include/winx/errnox.h:
+
+g:/mingw/3.3.1/include/sys/types.h:
+
+g:/glibc/include/winx/sys/typesx.h:
+
+g:/glibc/include/bits/types.h:
+
+g:/glibc/include/bits/wordsize.h:
+
+g:/glibc/include/bits/typesizes.h:
+
+g:/glibc/include/sys/sysmacros.h:
+
+g:/glibc/include/stdio_ext.h:
+
+g:/glibc/include/winx/pathx.h:
+
+g:/mingw/3.3.1/include/stdlib.h:
+
+g:/glibc/include/winx/stdlibx.h:
+
+g:/mingw/3.3.1/include/stdint.h:
+
+g:/glibc/include/winx/stdintx.h:
+
+g:/mingw/3.3.1/include/string.h:
+
+g:/glibc/include/winx/stringx.h:
+
+g:/mingw/3.3.1/include/memory.h:
+
+g:/mingw/3.3.1/include/ctype.h:
+
+g:/glibc/include/winx/ctypex.h:
+
+g:/glibc/include/endian.h:
+
+g:/glibc/include/bits/endian.h:
+
+g:/mingw/3.3.1/include/strings.h:
+
+g:/mingw/3.3.1/include/fcntl.h:
+
+g:/mingw/3.3.1/include/io.h:
+
+g:/glibc/include/winx/iox.h:
+
+g:/mingw/3.3.1/include/getopt.h:
+
+g:/glibc/include/winx/getoptx.h:
+
+g:/glibc/include/winx/fcntlx.h:
+
+g:/glibc/include/bits/fcntl.h:

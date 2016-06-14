@@ -1,0 +1,526 @@
+計測データ取得ライブラリのC/C++  APIの説明
+
+                              2010.10.22  version  14.0.0
+                              2010.12.22  version  14.1.0
+
+            目次
+１．ライブラリファイル等
+２．関数一覧
+３．関数詳細
+４．整数データモデルの説明
+
+
+
+
+
+
+１．ライブラリファイル等
+    Windows版  動的ライブラリ        retrieve.dll
+               インポートライブラリ  retrieve.lib
+    Linux版    共有ライブラリ        libretrieve.so
+               静的ライブラリ        libRetrieve.a
+    Mac版      静的ライブラリ        libRetrieve.a
+
+    共通       ヘッダファイル        retrieve.h
+
+
+２．関数一覧
+
+    retrieveOpen            ：  計測データ取得の開始宣言
+    retrieveOpenDirect      ：  計測データ取得の開始宣言（収集サーバ向け）
+    retrieveOpenWait        ：  計測データ取得の開始宣言（waitモード） *1
+    retrieveOpenDirectWait  ：  計測データ取得の開始宣言（収集サーバ向け、waitモード）*1
+    retrieveShotInfo        ：  ショット情報取得
+    retrieveChInfo          ：  チャネル情報取得
+    retrieveChData          ：  チャネルブロックデータ取得
+    retrieveChParams        ：  チャネル全パラメータ取得
+    retrieveChParam         ：  チャネルパラメータ取得
+    retrieveFrameInfo       ：  フレーム情報取得
+    retrieveFrameData       ：  フレームデータ取得
+    retrieveClose           ：  計測データ取得の終了宣言
+    retrieveVersion         ：  本ライブラリ（retrieve)のバージョンの取得
+    retrieveErrorMessage    ：  retrieveのエラーコードをメッセージに変換
+    retrieveChVolts         ：  チャネルブロック電圧値データ取得(FLOAT型)  *2
+    retrieveChVoltsDbl      ：  チャネルブロック電圧値データ取得(DOUBLE型) *2
+
+    (注)*1 version 13.0.0からの新機能
+    (注)*2 version 13.2.0からの新機能
+
+
+３．関数詳細
+
+
+３．１  retrieveOpen：計測データ取得の開始宣言
+
+（１）  機能
+        計測データ取得を開始することを宣言をする。
+
+（２）  I/F
+        int retrieveOpen(
+                     const char* diag_name ,const char* index_server ,
+                     unsigned int shot_number, unsigned short sub_shot
+            );
+
+（３）  引数
+        diag_name   ：[in]  取得したいデータの計測名
+        index_sever ：[in]  indexデータベースを管理するホスト名
+        shot_number ：[in]  取得したいデータのショット番号
+        sub_shot    ：[in]  取得したいデータのサブショット番号
+
+（４）  戻り値
+        正常時は、retrieve識別子を返す。  異常時には、負のコード（エラーコード）
+      である。  データが無い場合もエラーで戻る。  宣言処理(retrieveOpenXXXX)以
+      外は、このretrieve識別子を使用する。
+
+（５）  補足
+        'index_server'は、"ホスト名/サイト名"の形式である。  サイト名を省略する
+      と'LHD'となる。  また、NULL指定すると環境変数'INDEXESERVERNAME'の値が利用
+      される。  現在のホスト名は'DASINDEX.LHD.nifs.ac.jp'である。
+
+        本関数の正常後、処理が終了前に、必ず、retrieveClose関数を使用する必要が
+      ある。
+
+
+３．２  retrieveOpenDirect：計測データ取得の開始宣言（収集サーバ向け）
+
+（１）  機能
+        実験中に、収集サーバから計測データ取得を開始することを宣言をする。
+
+（２）  I/F
+        int retrieveOpenDirect(
+                    const char* diag_name ,const char* server ,const char* path,
+                    unsigned int shot_number, unsigned short sub_shot ,int port
+        );
+
+（３）  引数
+        diag_name   ：[in]  取得したいデータの計測名
+        sever       ：[in]  収集サーバ名
+        path        ：[in]  保存パス名
+        shot_number ：[in]  取得したいデータのショット番号
+        sub_shot    ：[in]  取得したいデータのサブショット番号
+        port        ：[in]  通信ポート番号（通常は０でよい。）
+
+（４）  戻り値
+        retrieveOpen関数と同じ。
+
+（５）  補足
+        収集サーバ名、保存パス名は、計測ごとに違いますので、LABCOMにお問い合わせ
+      ください。  実験中にショット終了後の早いタイミングでデータを取得したい場合
+      は有効である。
+
+
+３．３  retrieveOpenWait：計測データ取得の開始宣言（waitモード）
+
+（１）  機能
+        waitモード（データ出現を一定時間待つ）の計測データ取得を開始することを宣言
+      をする。
+
+（２）  I/F
+        int retrieveOpenWait(
+                    const char* diag_name ,const char* index_server ,
+                    unsigned int shot_number, unsigned short sub_shot ,
+                    int timeout_sec
+        );
+
+（３）  引数
+        diag_name   ：[in]  取得したいデータの計測名
+        index_sever ：[in]  indexデータベースを管理するホスト名
+        shot_number ：[in]  取得したいデータのショット番号
+        sub_shot    ：[in]  取得したいデータのサブショット番号
+        timeout_sec ：[in]  待ち時間（秒）
+
+（４）  戻り値
+        retrieveOpen関数と同じ。
+
+（５）  補足
+        retrieveOpen関数と同じ。
+        指定された待ち時間をデータベースを管理するホストのリソースを使用しますので
+      利用するときは、適切な待ち時間を設定してください。
+
+
+３．４  retrieveOpenDirectWait：計測データ取得の開始宣言（収集サーバ向け、waitモード）
+
+（１）  機能
+        実験中に、収集サーバからwaitモード（データ出現を一定時間待つ）の計測
+      データ取得を開始することを宣言をする。
+
+（２）  I/F
+        int retrieveOpenDirectWait(
+                    const char* diag_name ,const char* server ,const char* path,
+                    unsigned int shot_number, unsigned short sub_shot ,int port,
+                    int timeout_sec
+        );
+
+（３）  引数
+        diag_name   ：[in]  取得したいデータの計測名
+        sever       ：[in]  収集サーバ名
+        path        ：[in]  保存パス名
+        shot_number ：[in]  取得したいデータのショット番号
+        sub_shot    ：[in]  取得したいデータのサブショット番号
+        port        ：[in]  通信ポート番号（通常は０でよい。）
+        timeout_sec ：[in]  待ち時間（秒）
+
+（４）  戻り値
+        retrieveOpen関数と同じ。
+
+（５）  補足
+        retrieveOpenDirect関数と同じ。
+        また、収集サーバのリソースを使用しますので、利用するときは、LABCOMにお問
+      い合わせください。
+
+
+３．５  retrieveShotInfo：ショット情報取得
+
+（１）  機能
+        データ取得を宣言したデータのショット情報を取得する。
+
+（２）  I/F
+        int retrieveShotInfo(
+                    int rtr_d ,unsigned int* n_channel ,
+                    short* year ,short* month ,short* day ,
+                    short* hour ,short* min ,short* sec,
+                    char* management ,char* comment ,int comment_size ,char* server
+        ); 
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+        n_channel   ：[out] 計測の保存チャネル数
+        year        ：[out] 保存した年
+        month       ：[out] 保存した月
+        day         ：[out] 保存した日
+        hour        ：[out] 保存した時
+        min         ：[out] 保存した分
+        sec         ：[out] 保存した秒
+        managemnet  ：[out] データ管理システムの管理番号
+        comment     ：[out] ショット時のコメント
+        comment_size：[in]  comment領域のサイズ
+        server      ：[out] 転送サーバ名
+
+（４）  戻り値
+        終了ステータスである。  ０は正常コード、負の値はエラーコードである。
+
+（５）  補足
+        収集サーバから取得時は、保存した年月日時分秒は不定である。
+        'management','server'には３２バイト以上の領域のバッファが必要である。
+
+
+３．６  retrieveChInfo：チャネル情報取得
+
+（１）  機能
+        データ取得を宣言したデータの各チャネルの付帯情報を取得する。
+
+（２）  I/F
+        int retrieveChInfo(
+                int rtr_d ,int ch_no ,
+                unsigned int* data_length ,unsigned int* comp_length ,
+                unsigned short* param_count ,short* data_type ,char* image_type ,
+                unsigned short* value_len ,int* is_nframe ,
+                char* management ,char* comment ,int comment_size
+        );
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+        ch_no       ：[in]  チャネル番号（１～）
+        data_length ：[out] ブロックデータのバイトサイズ
+        comp_length ：[out] ブロックデータを圧縮したときのバイトサイズ
+        param_count ：[out] 保存されたパラメータ数
+        data_type   ：[out] データ種別（0:RAW,1:ANA)
+        image_type  ：[out] イメージ種別（補足を参照)
+        value_len   ：[out] １データあたりの解像度、ビット深さ
+        is_nframe   ：[out] １チャネルあたりのフレーム数
+                            (フレーム構造でない場合は0)
+        managemnet  ：[out] データ管理システムの管理番号
+        comment     ：[out] チャネルのコメント
+        comment_size：[in]  comment領域のサイズ
+
+（４）  戻り値
+        終了ステータスである。  ０は正常コード、負の値はエラーコードである。
+
+（５）  補足
+        'management','server'には３２バイト以上の領域のバッファが必要である。
+        'comment'には、"not  completed"等のショット時の異常状態の情報が格納される。
+        イメージ種別は、データ構造を表現し、以下に分類する。（""の場合もある。）
+            "INT8"      :  8ビット整数
+            "INT16"     : 16ビット整数
+            "INT32"     : 32ビット整数
+            "INT64"     : 64ビット整数
+            "FLT32"     : 32ビット浮動少数点
+            "FLT64"     : 64ビット浮動少数点
+            "GRAYn"     : nビットグレースケール画像（n:8～16）  例）'GRAY8'
+            "RGB"       : 24ビットカラー画像（RGBの順が変更可)  例）'BGR'
+            "ARGB"      : 32ビットカラー画像（ARGBの順が変更可) 例）'BGRA'
+            "YUV422"    : YUV422形式カラー画像
+            "BayerBGn"  : ベイヤ画像（n:8,16)                   例）'BayerBG8'
+
+
+３．７  retrieveChData：チャネルブロックデータ取得
+
+（１）  機能
+        データ取得を宣言したデータの各チャネルのブロックデータを取得する。
+
+（２）  I/F
+        int retrieveChData(
+                    int rtr_d, int ch_no ,
+                    char* data ,unsigned int array_size ,unsigned int* data_length
+        );
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+        ch_no       ：[in]  チャネル番号（１～）
+        data        ：[out] ブロックデータ格納領域
+        array_size  ：[in]  ブロックデータ格納領域のバイトサイズ
+        data_length ：[out] ブロックデータの格納したバイトサイズ
+
+（４）  戻り値
+        終了ステータスである。  ０は正常コード、負の値はエラーコードである。
+
+（５）  補足
+        ブロックデータのサイズは、retrieveChInfo関数で取得できる。
+
+
+３．８  retrieveChParams：チャネル全パラメータ取得
+
+（１）  機能
+        データ取得を宣言したデータの各チャネルの全パラメータを取得する。
+
+（２）  I/F
+        int retrieveChParams(
+                    int rtr_d, int ch_no ,
+                    char** param_name ,char** param_value ,int* param_type
+        );
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+        ch_no       ：[in]  チャネル番号（１～）
+        param_name  ：[out] パラメータ名を格納する領域のポインタ配列
+        param_value ：[out] パラメータ値を格納する領域のポインタ配列
+        param_type  ：[out] パラメータ種別を格納する配列領域
+
+（４）  戻り値
+        終了ステータスである。  ０は正常コード、負の値はエラーコードである。
+
+（５）  補足
+        param_name,param_value,param_typeはパラメータ数の配列が必要である。
+        パラメータ数は、retrieveChInfo関数で取得できる。
+        また、param_name,param_valueの１パラメータあたりのサイズはそれぞれ、
+        64バイト,128バイト以上必要である。
+
+
+３．９  retrieveChParam：チャネルパラメータ取得
+
+（１）  機能
+        データ取得を宣言したデータの各チャネルの各パラメータを取得する。
+
+（２）  I/F
+        int retrieveChParam(
+                    int rtr_d, int ch_no , int param_no ,
+                    char* param_name ,char* param_value ,int* param_type
+        );
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+        ch_no       ：[in]  チャネル番号（１～）
+        param_no    ：[in]  パラメータ番号（0～パラメータ数-1）
+        param_name  ：[out] パラメータ名を格納する領域
+        param_value ：[out] パラメータ値を格納する領域
+        param_type  ：[out] パラメータ種別
+
+（４）  戻り値
+        0は成功である。  負の値はエラーコードである。
+
+（５）  補足
+        param_name,param_value,param_typeはパラメータ数の配列が必要である。
+        パラメータ数は、retrieveChInfo関数で取得できる。
+        また、param_name,param_valueの１パラメータあたりのサイズはそれぞれ、
+        64バイト,128バイト以上必要である。
+
+
+３．１０  retrieveFrameInfo：フレーム情報取得
+
+（１）  機能
+        データ取得を宣言したデータのチャネルの各フレーム情報を取得する。
+
+（２）  I/F
+        int retrieveFrameInfo(
+                    int rtr_d ,int ch_no ,int frame_no ,
+                    unsigned int* data_length ,char* image_type ,
+                    unsigned int* frame_x ,unsigned int* frame_y
+        ); 
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+        ch_no       ：[in]  チャネル番号（１～）
+        frame_no    ：[in]  フレーム番号（１～）
+        data_length ：[out] フレームデータバイトサイズ
+        image_type  ：[out] イメージ種別
+        frame_x     ：[out] フレーム  Ｘ  サイズ
+        frame_y     ：[out] フレーム  Ｙ  サイズ
+
+（４）  戻り値
+        終了ステータスである。  ０は正常コード、負の値はエラーコードである。
+
+（５）  補足
+        イメージ種別は、retrieveChInfo関数の補足を参照のこと。
+        総フレーム数は、retrieveChInfo関数で取得できる。
+
+
+３．１１  retrieveFrameData：フレームデータ取得
+
+（１）  機能
+        データ取得を宣言したデータのチャネルの各フレームのデータを取得する。
+
+（２）  I/F
+        int retrieveFrameData(
+                    int rtr_d, int ch_no ,int frame_no ,
+                    char* data ,unsigned int array_size ,unsigned int* data_length
+        );
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+        ch_no       ：[in]  チャネル番号（１～）
+        frame_no    ：[in]  フレーム番号（１～）
+        data        ：[out] フレームデータ格納領域
+        array_size  ：[in]  フレームデータ格納領域のバイトサイズ
+        data_length ：[out] フレームデータの格納したバイトサイズ
+
+（４）  戻り値
+        終了ステータスである。  ０は正常コード、負の値はエラーコードである。
+
+（５）  補足
+        フレームデータのサイズは、retrieveFrameInfo関数で取得できる。
+
+
+３．１２  retrieveClose：計測データ取得の終了宣言
+
+（１）  機能
+        計測データ取得を終了することを宣言をする。
+
+（２）  I/F
+        int retrieveClose(
+                    int rtr_d
+        );
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+
+（４）  戻り値
+        終了ステータスである。  ０は正常コード、負の値はエラーコードである。
+
+（５）  補足
+        リソースを開放しますので、必ず、使用してください。
+
+
+３．１３  retrieveVersion：本ライブラリ（retrieve)のバージョンの取得
+
+（１）  機能
+        本ライブラリ（retrieve)のバージョンを取得する。
+
+（２）  I/F
+        const char* retrieveVersion( void );
+
+（３）  引数
+        なし。
+
+（４）  戻り値
+        バージョンの文字列
+
+
+３．１４  retrieveErrorMessage：retrieveのエラーコードをメッセージに変換
+
+（１）  機能
+        retrieveのエラーコードをメッセージに変換する。
+
+（２）  I/F
+        const char* retrieveErrorMessage(
+                 int error_code
+         );
+
+（３）  引数
+        error_code  ：[in]  エラーコード
+
+（４）  戻り値
+        エラーメッセージの文字列
+
+
+３．１５  retrieveChVolts：チャネルブロック電圧値データ取得(FLOAT型)
+
+（１）  機能
+        データ取得を宣言したデータの各チャネルのブロックデータを電圧値に変換して
+　　　取得する。
+
+（２）  I/F
+        int retrieveChVolts(
+                    int rtr_d, int ch_no ,
+                    float* data ,unsigned int array_size ,unsigned int* data_length
+        );
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+        ch_no       ：[in]  チャネル番号（１～）
+        data        ：[out] 電圧値データ格納領域
+        array_size  ：[in]  電圧値データ格納領域のサイズ
+        data_length ：[out] 電圧値データの格納したサイズ
+
+（４）  戻り値
+        終了ステータスである。  ０は正常コード、負の値はエラーコードである。
+        サポートしていないモジュールはエラーとなる。
+
+（５）  補足
+        必要なarray_sizeは、retrieveChInfo関数で取得した情報から算出できる。
+
+
+３．１６  retrieveChVoltsDbl：チャネルブロック電圧値データ取得(DOUBLE型)
+
+（１）  機能
+        データ取得を宣言したデータの各チャネルのブロックデータを電圧値に変換して
+　　　取得する。
+
+（２）  I/F
+        int retrieveChVoltsDbl(
+                    int rtr_d, int ch_no ,
+                    double* data ,unsigned int array_size ,unsigned int* data_length
+        );
+
+（３）  引数
+        rtr_d       ：[in]  retrieve識別子
+        ch_no       ：[in]  チャネル番号（１～）
+        data        ：[out] 電圧値データ格納領域
+        array_size  ：[in]  電圧値データ格納領域のサイズ
+        data_length ：[out] 電圧値データの格納したサイズ
+
+（４）  戻り値
+        終了ステータスである。  ０は正常コード、負の値はエラーコードである。
+        サポートしていないモジュールはエラーとなる。
+
+（５）  補足
+        必要なarray_sizeは、retrieveChInfo関数で取得した情報から算出できる。
+
+
+４．整数データモデルの説明
+
+    整数データモデルは、OS及びプラットフォームの違いで以下のように分かれます。
+
+    (1)  32ビット版Windows、32ビット版Linux
+         ILP32と呼ばれるデータモデル。
+         int、long int、long、ポインタ、は32bitである。
+         long long int、long long、は64bitである。
+
+    (2)  64ビット版Windows
+         LLP64と呼ばれるデータモデル。
+         int、long int、long、は32bitである。
+         long long int、long long、は64bitである。
+         ポインタ、は64bitである。
+
+   (3)   64ビット版Linux、Mac OS X、Solaris、AIX
+         LP64と呼ばれるデータモデル。
+         int、は32bitである。
+         long int、long、ポインタ、は64bitである。
+
+    本ライブラリAPIでは、現在のところ、long型、long int型は使用していません。
+
+５．電圧値変換対応モジュール
+　　電圧値変換対応モジュールは、以下のモジュールです．(2010-03-15現在)
+　  Aurora14,SEGADC,HOUSIN_C012,PXI6115,PXI6133,PXI6132,PXI6143,PXI6225,WE72XX
+
+★★★本パッケージに関してお気づきの点・バグレポートなどがありましたら、
+        LABCOM@LHD.nifs.ac.jp 宛にご連絡ねがいます  ★★★

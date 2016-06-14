@@ -1,0 +1,94 @@
+//-----------------------------------------------------
+//
+//	inverse problem data
+//
+//-----------------------------------------------------
+
+//	experimental configurations
+
+//	pixel number of wavelength (number of experimental data)
+numberOfWavelength = 2048
+
+//	number of temperature	(number of parameters)
+numberOfTemp = 30
+
+//^ rest wavelength
+lambda0 = 656.28
+
+//^ velocity of light
+vlight = 3e+8
+
+//^ boltzman constant
+kb = 1.6e-19
+
+//^ mass of H atom
+mass = 1.67e-27
+
+//^ lambda data (number,start,ratio)
+numberOfLambda = 10
+lambdaStart = 1
+lambdaRatio = 5
+
+//^ temp data min and Max
+tempMin = 1
+tempMax = 3000
+
+//^ sigma change
+sigmaStart = 1250
+sigmaEnd = 1475
+sigmaValue = 10000
+
+//	path for experimental data
+path_expData = data/spec1.itx
+wavelengthData = data/wavelength1.itx
+sigmaData = data/sigma1.itx
+
+
+
+
+v_data1 = output/debug/FVL/1/v.itx
+v_data2 = output/debug/FVL/2/v.itx
+v_data3 = output/debug/FVL/3/v.itx
+v_data4 = output/debug/FVL/4/v.itx
+v_data5 = output/debug/FVL/5/v.itx
+v_data6 = output/debug/FVL/6/v.itx
+v_data7 = output/debug/FVL/7/v.itx
+v_data8 = output/debug/FVL/8/v.itx
+v_data9 = output/debug/FVL/9/v.itx
+v_data10 = output/debug/FVL/10/v.itx
+v_data11 = output/debug/FVL/11/v.itx
+v_data12 = output/debug/FVL/12/v.itx
+v_data13 = output/debug/FVL/13/v.itx
+v_data14 = output/debug/FVL/14/v.itx
+v_data15 = output/debug/FVL/15/v.itx
+v_data16 = output/debug/FVL/16/v.itx
+v_data17 = output/debug/FVL/17/v.itx
+v_data18 = output/debug/FVL/18/v.itx
+v_data19 = output/debug/FVL/19/v.itx
+v_data20 = output/debug/FVL/20/v.itx
+v_data21 = output/debug/FVL/21/v.itx
+v_data22 = output/debug/FVL/22/v.itx
+
+verr_data1 = output/debug/FVL/1/verr.itx
+verr_data2 = output/debug/FVL/2/verr.itx
+verr_data3 = output/debug/FVL/3/verr.itx
+verr_data4 = output/debug/FVL/4/verr.itx
+verr_data5 = output/debug/FVL/5/verr.itx
+verr_data6 = output/debug/FVL/6/verr.itx
+verr_data7 = output/debug/FVL/7/verr.itx
+verr_data8 = output/debug/FVL/8/verr.itx
+verr_data9 = output/debug/FVL/9/verr.itx
+verr_data10 = output/debug/FVL/10/verr.itx
+verr_data11 = output/debug/FVL/11/verr.itx
+verr_data12 = output/debug/FVL/12/verr.itx
+verr_data13 = output/debug/FVL/13/verr.itx
+verr_data14 = output/debug/FVL/14/verr.itx
+verr_data15 = output/debug/FVL/15/verr.itx
+verr_data16 = output/debug/FVL/16/verr.itx
+verr_data17 = output/debug/FVL/17/verr.itx
+verr_data18 = output/debug/FVL/18/verr.itx
+verr_data19 = output/debug/FVL/19/verr.itx
+verr_data20 = output/debug/FVL/20/verr.itx
+verr_data21 = output/debug/FVL/21/verr.itx
+verr_data22 = output/debug/FVL/22/verr.itx
+

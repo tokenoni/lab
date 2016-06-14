@@ -1,0 +1,234 @@
+libtiff-dllversion.lo .libs/libtiff-dllversion.o:  \
+ ../res/libtiff-dllversion.c g:/mingw/3.3.1/include/windows.h \
+  g:/mingw/3.3.1/include/stdarg.h \
+  g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stdarg.h \
+  g:/glibc/include/winx/stdargx.h g:/mingw/3.3.1/include/windef.h \
+  g:/mingw/3.3.1/include/winnt.h g:/mingw/3.3.1/include/winerror.h \
+  g:/mingw/3.3.1/include/string.h g:/mingw/3.3.1/include/_mingw.h \
+  g:/mingw/3.3.1/include/stddef.h \
+  g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stddef.h \
+  g:/glibc/include/winx/stddefx.h g:/glibc/include/winx/stringx.h \
+  g:/glibc/include/features.h g:/glibc/include/sys/cdefs.h \
+  g:/glibc/include/gnu/stubs.h g:/glibc/include/winx/pathx.h \
+  g:/mingw/3.3.1/include/basetsd.h g:/mingw/3.3.1/include/pshpack4.h \
+  g:/mingw/3.3.1/include/poppack.h g:/glibc/include/winx/winntx.h \
+  g:/glibc/include/winx/windefx.h g:/mingw/3.3.1/include/limits.h \
+  g:/glibc/include/winx/limitsx.h g:/glibc/include/bits/posix1_lim.h \
+  g:/glibc/include/bits/local_lim.h g:/glibc/include/bits/posix2_lim.h \
+  g:/glibc/include/bits/xopen_lim.h g:/glibc/include/bits/stdio_lim.h \
+  g:/mingw/3.3.1/include/wincon.h g:/mingw/3.3.1/include/winbase.h \
+  g:/glibc/include/winx/winbasex.h g:/mingw/3.3.1/include/wingdi.h \
+  g:/glibc/include/winx/wingdix.h g:/mingw/3.3.1/include/winuser.h \
+  g:/mingw/3.3.1/include/winnls.h g:/mingw/3.3.1/include/winver.h \
+  g:/mingw/3.3.1/include/winnetwk.h g:/mingw/3.3.1/include/winreg.h \
+  g:/mingw/3.3.1/include/winsvc.h g:/mingw/3.3.1/include/cderr.h \
+  g:/mingw/3.3.1/include/dde.h g:/mingw/3.3.1/include/ddeml.h \
+  g:/mingw/3.3.1/include/dlgs.h g:/mingw/3.3.1/include/imm.h \
+  g:/mingw/3.3.1/include/lzexpand.h g:/mingw/3.3.1/include/mmsystem.h \
+  g:/mingw/3.3.1/include/nb30.h g:/mingw/3.3.1/include/rpc.h \
+  g:/glibc/include/winx/windowsx.h g:/mingw/3.3.1/include/rpcdce.h \
+  g:/mingw/3.3.1/include/basetyps.h g:/mingw/3.3.1/include/rpcdcep.h \
+  g:/mingw/3.3.1/include/rpcnsi.h g:/mingw/3.3.1/include/rpcnterr.h \
+  g:/mingw/3.3.1/include/shellapi.h g:/mingw/3.3.1/include/pshpack2.h \
+  g:/mingw/3.3.1/include/winperf.h g:/mingw/3.3.1/include/commdlg.h \
+  g:/mingw/3.3.1/include/winspool.h g:/mingw/3.3.1/include/winsock2.h \
+  g:/glibc/include/winx/winsock2x.h g:/glibc/include/winx/winsockx.h \
+  g:/mingw/3.3.1/include/sys/types.h g:/glibc/include/winx/sys/typesx.h \
+  g:/glibc/include/bits/types.h g:/glibc/include/bits/wordsize.h \
+  g:/glibc/include/bits/typesizes.h g:/glibc/include/sys/sysmacros.h \
+  g:/mingw/3.3.1/include/ole2.h g:/mingw/3.3.1/include/objbase.h \
+  g:/mingw/3.3.1/include/rpcndr.h g:/mingw/3.3.1/include/rpcnsip.h \
+  g:/mingw/3.3.1/include/objfwd.h g:/mingw/3.3.1/include/stdlib.h \
+  g:/glibc/include/winx/stdlibx.h g:/mingw/3.3.1/include/stdint.h \
+  g:/glibc/include/winx/stdintx.h g:/mingw/3.3.1/include/wtypes.h \
+  g:/mingw/3.3.1/include/unknwn.h g:/mingw/3.3.1/include/objidl.h \
+  g:/mingw/3.3.1/include/cguid.h g:/mingw/3.3.1/include/olectlid.h \
+  g:/mingw/3.3.1/include/oleauto.h g:/mingw/3.3.1/include/oaidl.h \
+  g:/mingw/3.3.1/include/oleidl.h g:/mingw/3.3.1/include/shlwapi.h \
+  g:/mingw/3.3.1/include/shlobj.h g:/mingw/3.3.1/include/shlguid.h \
+  g:/mingw/3.3.1/include/commctrl.h g:/mingw/3.3.1/include/prsht.h \
+  g:/mingw/3.3.1/include/pshpack1.h
+
+g:/mingw/3.3.1/include/windows.h:
+
+g:/mingw/3.3.1/include/stdarg.h:
+
+g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stdarg.h:
+
+g:/glibc/include/winx/stdargx.h:
+
+g:/mingw/3.3.1/include/windef.h:
+
+g:/mingw/3.3.1/include/winnt.h:
+
+g:/mingw/3.3.1/include/winerror.h:
+
+g:/mingw/3.3.1/include/string.h:
+
+g:/mingw/3.3.1/include/_mingw.h:
+
+g:/mingw/3.3.1/include/stddef.h:
+
+g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stddef.h:
+
+g:/glibc/include/winx/stddefx.h:
+
+g:/glibc/include/winx/stringx.h:
+
+g:/glibc/include/features.h:
+
+g:/glibc/include/sys/cdefs.h:
+
+g:/glibc/include/gnu/stubs.h:
+
+g:/glibc/include/winx/pathx.h:
+
+g:/mingw/3.3.1/include/basetsd.h:
+
+g:/mingw/3.3.1/include/pshpack4.h:
+
+g:/mingw/3.3.1/include/poppack.h:
+
+g:/glibc/include/winx/winntx.h:
+
+g:/glibc/include/winx/windefx.h:
+
+g:/mingw/3.3.1/include/limits.h:
+
+g:/glibc/include/winx/limitsx.h:
+
+g:/glibc/include/bits/posix1_lim.h:
+
+g:/glibc/include/bits/local_lim.h:
+
+g:/glibc/include/bits/posix2_lim.h:
+
+g:/glibc/include/bits/xopen_lim.h:
+
+g:/glibc/include/bits/stdio_lim.h:
+
+g:/mingw/3.3.1/include/wincon.h:
+
+g:/mingw/3.3.1/include/winbase.h:
+
+g:/glibc/include/winx/winbasex.h:
+
+g:/mingw/3.3.1/include/wingdi.h:
+
+g:/glibc/include/winx/wingdix.h:
+
+g:/mingw/3.3.1/include/winuser.h:
+
+g:/mingw/3.3.1/include/winnls.h:
+
+g:/mingw/3.3.1/include/winver.h:
+
+g:/mingw/3.3.1/include/winnetwk.h:
+
+g:/mingw/3.3.1/include/winreg.h:
+
+g:/mingw/3.3.1/include/winsvc.h:
+
+g:/mingw/3.3.1/include/cderr.h:
+
+g:/mingw/3.3.1/include/dde.h:
+
+g:/mingw/3.3.1/include/ddeml.h:
+
+g:/mingw/3.3.1/include/dlgs.h:
+
+g:/mingw/3.3.1/include/imm.h:
+
+g:/mingw/3.3.1/include/lzexpand.h:
+
+g:/mingw/3.3.1/include/mmsystem.h:
+
+g:/mingw/3.3.1/include/nb30.h:
+
+g:/mingw/3.3.1/include/rpc.h:
+
+g:/glibc/include/winx/windowsx.h:
+
+g:/mingw/3.3.1/include/rpcdce.h:
+
+g:/mingw/3.3.1/include/basetyps.h:
+
+g:/mingw/3.3.1/include/rpcdcep.h:
+
+g:/mingw/3.3.1/include/rpcnsi.h:
+
+g:/mingw/3.3.1/include/rpcnterr.h:
+
+g:/mingw/3.3.1/include/shellapi.h:
+
+g:/mingw/3.3.1/include/pshpack2.h:
+
+g:/mingw/3.3.1/include/winperf.h:
+
+g:/mingw/3.3.1/include/commdlg.h:
+
+g:/mingw/3.3.1/include/winspool.h:
+
+g:/mingw/3.3.1/include/winsock2.h:
+
+g:/glibc/include/winx/winsock2x.h:
+
+g:/glibc/include/winx/winsockx.h:
+
+g:/mingw/3.3.1/include/sys/types.h:
+
+g:/glibc/include/winx/sys/typesx.h:
+
+g:/glibc/include/bits/types.h:
+
+g:/glibc/include/bits/wordsize.h:
+
+g:/glibc/include/bits/typesizes.h:
+
+g:/glibc/include/sys/sysmacros.h:
+
+g:/mingw/3.3.1/include/ole2.h:
+
+g:/mingw/3.3.1/include/objbase.h:
+
+g:/mingw/3.3.1/include/rpcndr.h:
+
+g:/mingw/3.3.1/include/rpcnsip.h:
+
+g:/mingw/3.3.1/include/objfwd.h:
+
+g:/mingw/3.3.1/include/stdlib.h:
+
+g:/glibc/include/winx/stdlibx.h:
+
+g:/mingw/3.3.1/include/stdint.h:
+
+g:/glibc/include/winx/stdintx.h:
+
+g:/mingw/3.3.1/include/wtypes.h:
+
+g:/mingw/3.3.1/include/unknwn.h:
+
+g:/mingw/3.3.1/include/objidl.h:
+
+g:/mingw/3.3.1/include/cguid.h:
+
+g:/mingw/3.3.1/include/olectlid.h:
+
+g:/mingw/3.3.1/include/oleauto.h:
+
+g:/mingw/3.3.1/include/oaidl.h:
+
+g:/mingw/3.3.1/include/oleidl.h:
+
+g:/mingw/3.3.1/include/shlwapi.h:
+
+g:/mingw/3.3.1/include/shlobj.h:
+
+g:/mingw/3.3.1/include/shlguid.h:
+
+g:/mingw/3.3.1/include/commctrl.h:
+
+g:/mingw/3.3.1/include/prsht.h:
+
+g:/mingw/3.3.1/include/pshpack1.h:

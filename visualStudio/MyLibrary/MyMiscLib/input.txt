@@ -1,0 +1,30 @@
+#################################################
+#	input file path should be written 
+#################################################
+# sawada
+# inputFilePath =C:\Users\KeisukeFujii\Dropbox\HighThroughputSpecForHa2013\sawada121750\thomson\BsplineFitRho_input.txt
+
+# nagaoka
+# inputFilePath =C:\Users\KeisukeFujii\Dropbox\HighThroughputSpecForHa2013\high_Ti\119084\thomson\BsplineFitRho_input.txt
+
+# W
+# inputFilePath =C:\Users\KeisukeFujii\Dropbox\HighThroughputSpecForHa2013\Hpellet\119563\thomson\BsplineFitRho_input.txt
+
+# sunahara
+# inputFilePath = C:\Users\KeisukeFujii\Dropbox\FastSpectroscopy2013\122011\thomson\BsplineFitRho_input.txt
+
+# inputFilePath = C:\Users\KeisukeFujii\Dropbox\HighThroughputSpecForHa\NeutralDiffusion\113544\thomson_new\BsplineFitRho_input.txt
+
+# shinohara
+# inputFilePath = C:\Users\KeisukeFujii\Dropbox\shared_LHD_group\shinohara\thomson2\121553\BsplineFitRho_input.txt
+
+# H mode
+# inputFilePath = C:\Users\KeisukeFujii\Dropbox\HighThroughputSpecForHa2013\Hmode\120880\thomson\BsplineFitRho_input.txt
+# inputFilePath = C:\Users\KeisukeFujii\Dropbox\FastSpectroscopy2012\Hmode\115700\thomson\BsplineFitRho_input.txt
+# inputFilePath = C:\Users\KeisukeFujii\Dropbox\HighThroughputSpecForHa2013\Hmode\120251\thomson\BsplineFitRho_input.txt
+# CDC
+# inputFilePath = C:\Users\KeisukeFujii\Dropbox\HighThroughputSpecForHa2013\CoreDensityCollapse\120768\thomson2\BsplineFitRho_input.txt
+
+# normal one
+inputFilePath = C:\Users\KeisukeFujii\Dropbox\HighThroughputSpecForHa2013\normalDischarges\120721\thomson\BsplineFitRho_input.txt
+

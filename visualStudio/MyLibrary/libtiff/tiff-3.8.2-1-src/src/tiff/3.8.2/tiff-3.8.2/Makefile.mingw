@@ -1,0 +1,22 @@
+export DEFSPLUS=-DAVOID_WIN32_FILEIO -DBINMODE='"b"'
+export INCLUDESPLUS=
+export CFLAGSPLUS=
+export LDFLAGSPLUS=
+export LIBSPLUS=
+export DLLFLAG=-DBUILD_LIBTIFF_DLL
+sedfiles=Makefile libtool config.h
+BUILDDIR=$(shell pwd.sh)
+SRCDIR=../$(shell basename $(BUILDDIR)-src)
+
+.PHONY: all 
+all: CONF MFSED
+CONF:
+	$(SRCDIR)/configure --prefix=c:/progra~1/Tiff --srcdir="$(SRCDIR)" \
+		--disable-cxx --enable-shared --disable-static	
+
+-include $(DVLDIR)/makefile.chg
+
+#	make all
+#	make check
+#	make install prefix=c:/temp/sed
+                                 

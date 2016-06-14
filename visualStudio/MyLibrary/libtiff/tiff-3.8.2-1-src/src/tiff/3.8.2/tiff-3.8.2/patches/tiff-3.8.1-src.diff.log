@@ -1,0 +1,418 @@
+Hmm...  Looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/Makefile.in tiff-3.8.1-src/Makefile.in
+|--- tiff-3.8.1-orig/Makefile.in	2006-03-13 15:58:40.000000000 +0100
+|+++ tiff-3.8.1-src/Makefile.in	2006-03-13 22:42:22.656250000 +0100
+--------------------------
+Patching file Makefile.in using Plan A...
+Hunk #1 succeeded at 41.
+Hunk #2 succeeded at 135.
+Hunk #3 succeeded at 176.
+Hunk #4 succeeded at 201.
+Not setting time of file Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/configure tiff-3.8.1-src/configure
+|--- tiff-3.8.1-orig/configure	2006-03-13 15:58:42.000000000 +0100
+|+++ tiff-3.8.1-src/configure	2006-03-13 22:42:22.734375000 +0100
+--------------------------
+Patching file configure using Plan A...
+Hunk #1 succeeded at 19970.
+Not setting time of file configure (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/Makefile.in tiff-3.8.1-src/contrib/Makefile.in
+|--- tiff-3.8.1-orig/contrib/Makefile.in	2006-03-13 15:58:36.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/Makefile.in	2006-03-13 22:42:22.750000000 +0100
+--------------------------
+Patching file contrib/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 108.
+Hunk #3 succeeded at 149.
+Hunk #4 succeeded at 174.
+Not setting time of file contrib/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/acorn/Makefile.in tiff-3.8.1-src/contrib/acorn/Makefile.in
+|--- tiff-3.8.1-orig/contrib/acorn/Makefile.in	2006-03-13 15:58:36.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/acorn/Makefile.in	2006-03-13 22:42:22.750000000 +0100
+--------------------------
+Patching file contrib/acorn/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/acorn/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/addtiffo/Makefile.in tiff-3.8.1-src/contrib/addtiffo/Makefile.in
+|--- tiff-3.8.1-orig/contrib/addtiffo/Makefile.in	2006-03-13 15:58:37.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/addtiffo/Makefile.in	2006-03-13 22:42:22.765625000 +0100
+--------------------------
+Patching file contrib/addtiffo/Makefile.in using Plan A...
+Hunk #1 succeeded at 41.
+Hunk #2 succeeded at 81.
+Hunk #3 succeeded at 120.
+Hunk #4 succeeded at 148.
+Hunk #5 succeeded at 161.
+Hunk #6 succeeded at 186.
+Hunk #7 succeeded at 247.
+Hunk #8 succeeded at 304.
+Not setting time of file contrib/addtiffo/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/dbs/Makefile.in tiff-3.8.1-src/contrib/dbs/Makefile.in
+|--- tiff-3.8.1-orig/contrib/dbs/Makefile.in	2006-03-13 15:58:37.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/dbs/Makefile.in	2006-03-13 22:42:22.765625000 +0100
+--------------------------
+Patching file contrib/dbs/Makefile.in using Plan A...
+Hunk #1 succeeded at 41.
+Hunk #2 succeeded at 80.
+Hunk #3 succeeded at 138.
+Hunk #4 succeeded at 166.
+Hunk #5 succeeded at 179.
+Hunk #6 succeeded at 204.
+Hunk #7 succeeded at 339.
+Not setting time of file contrib/dbs/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/dbs/xtiff/Makefile.in tiff-3.8.1-src/contrib/dbs/xtiff/Makefile.in
+|--- tiff-3.8.1-orig/contrib/dbs/xtiff/Makefile.in	2006-03-13 16:06:18.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/dbs/xtiff/Makefile.in	2006-03-13 22:42:22.781250000 +0100
+--------------------------
+Patching file contrib/dbs/xtiff/Makefile.in using Plan A...
+Hunk #1 succeeded at 42.
+Hunk #2 succeeded at 101.
+Hunk #3 succeeded at 142.
+Hunk #4 succeeded at 167.
+Not setting time of file contrib/dbs/xtiff/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/iptcutil/Makefile.in tiff-3.8.1-src/contrib/iptcutil/Makefile.in
+|--- tiff-3.8.1-orig/contrib/iptcutil/Makefile.in	2006-03-13 15:58:37.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/iptcutil/Makefile.in	2006-03-13 22:42:22.781250000 +0100
+--------------------------
+Patching file contrib/iptcutil/Makefile.in using Plan A...
+Hunk #1 succeeded at 41.
+Hunk #2 succeeded at 80.
+Hunk #3 succeeded at 119.
+Hunk #4 succeeded at 147.
+Hunk #5 succeeded at 160.
+Hunk #6 succeeded at 185.
+Hunk #7 succeeded at 246.
+Hunk #8 succeeded at 301.
+Not setting time of file contrib/iptcutil/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/mac-cw/Makefile.in tiff-3.8.1-src/contrib/mac-cw/Makefile.in
+|--- tiff-3.8.1-orig/contrib/mac-cw/Makefile.in	2006-03-13 15:58:37.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/mac-cw/Makefile.in	2006-03-13 22:42:22.796875000 +0100
+--------------------------
+Patching file contrib/mac-cw/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/mac-cw/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/mac-mpw/Makefile.in tiff-3.8.1-src/contrib/mac-mpw/Makefile.in
+|--- tiff-3.8.1-orig/contrib/mac-mpw/Makefile.in	2006-03-13 15:58:37.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/mac-mpw/Makefile.in	2006-03-13 22:42:22.796875000 +0100
+--------------------------
+Patching file contrib/mac-mpw/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/mac-mpw/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/mfs/Makefile.in tiff-3.8.1-src/contrib/mfs/Makefile.in
+|--- tiff-3.8.1-orig/contrib/mfs/Makefile.in	2006-03-13 15:58:37.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/mfs/Makefile.in	2006-03-13 22:42:22.812500000 +0100
+--------------------------
+Patching file contrib/mfs/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/mfs/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/ojpeg/Makefile.in tiff-3.8.1-src/contrib/ojpeg/Makefile.in
+|--- tiff-3.8.1-orig/contrib/ojpeg/Makefile.in	2006-03-13 15:58:38.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/ojpeg/Makefile.in	2006-03-13 22:42:22.812500000 +0100
+--------------------------
+Patching file contrib/ojpeg/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/ojpeg/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/pds/Makefile.in tiff-3.8.1-src/contrib/pds/Makefile.in
+|--- tiff-3.8.1-orig/contrib/pds/Makefile.in	2006-03-13 15:58:38.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/pds/Makefile.in	2006-03-13 22:42:22.828125000 +0100
+--------------------------
+Patching file contrib/pds/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/pds/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/ras/Makefile.in tiff-3.8.1-src/contrib/ras/Makefile.in
+|--- tiff-3.8.1-orig/contrib/ras/Makefile.in	2006-03-13 15:58:38.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/ras/Makefile.in	2006-03-13 22:42:22.843750000 +0100
+--------------------------
+Patching file contrib/ras/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/ras/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/stream/Makefile.in tiff-3.8.1-src/contrib/stream/Makefile.in
+|--- tiff-3.8.1-orig/contrib/stream/Makefile.in	2006-03-13 15:58:38.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/stream/Makefile.in	2006-03-13 22:42:22.843750000 +0100
+--------------------------
+Patching file contrib/stream/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/stream/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/tags/Makefile.in tiff-3.8.1-src/contrib/tags/Makefile.in
+|--- tiff-3.8.1-orig/contrib/tags/Makefile.in	2006-03-13 15:58:38.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/tags/Makefile.in	2006-03-13 22:42:22.859375000 +0100
+--------------------------
+Patching file contrib/tags/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/tags/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/contrib/win_dib/Makefile.in tiff-3.8.1-src/contrib/win_dib/Makefile.in
+|--- tiff-3.8.1-orig/contrib/win_dib/Makefile.in	2006-03-13 15:58:38.000000000 +0100
+|+++ tiff-3.8.1-src/contrib/win_dib/Makefile.in	2006-03-13 22:42:22.875000000 +0100
+--------------------------
+Patching file contrib/win_dib/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 99.
+Hunk #3 succeeded at 140.
+Hunk #4 succeeded at 165.
+Not setting time of file contrib/win_dib/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/html/Makefile.in tiff-3.8.1-src/html/Makefile.in
+|--- tiff-3.8.1-orig/html/Makefile.in	2006-03-13 16:06:18.000000000 +0100
+|+++ tiff-3.8.1-src/html/Makefile.in	2006-03-13 22:42:22.875000000 +0100
+--------------------------
+Patching file html/Makefile.in using Plan A...
+Hunk #1 succeeded at 43.
+Hunk #2 succeeded at 121.
+Hunk #3 succeeded at 162.
+Hunk #4 succeeded at 187.
+Not setting time of file html/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/html/images/Makefile.in tiff-3.8.1-src/html/images/Makefile.in
+|--- tiff-3.8.1-orig/html/images/Makefile.in	2006-03-13 15:58:38.000000000 +0100
+|+++ tiff-3.8.1-src/html/images/Makefile.in	2006-03-13 22:42:22.890625000 +0100
+--------------------------
+Patching file html/images/Makefile.in using Plan A...
+Hunk #1 succeeded at 41.
+Hunk #2 succeeded at 110.
+Hunk #3 succeeded at 151.
+Hunk #4 succeeded at 176.
+Not setting time of file html/images/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/html/man/Makefile.in tiff-3.8.1-src/html/man/Makefile.in
+|--- tiff-3.8.1-orig/html/man/Makefile.in	2006-03-13 15:58:39.000000000 +0100
+|+++ tiff-3.8.1-src/html/man/Makefile.in	2006-03-13 22:42:22.890625000 +0100
+--------------------------
+Patching file html/man/Makefile.in using Plan A...
+Hunk #1 succeeded at 41.
+Hunk #2 succeeded at 110.
+Hunk #3 succeeded at 151.
+Hunk #4 succeeded at 176.
+Not setting time of file html/man/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/libtiff/Makefile.in tiff-3.8.1-src/libtiff/Makefile.in
+|--- tiff-3.8.1-orig/libtiff/Makefile.in	2006-03-13 15:58:39.000000000 +0100
+|+++ tiff-3.8.1-src/libtiff/Makefile.in	2006-03-13 22:43:57.484375000 +0100
+--------------------------
+Patching file libtiff/Makefile.in using Plan A...
+Hunk #1 succeeded at 43.
+Hunk #2 succeeded at 94.
+Hunk #3 succeeded at 128.
+Hunk #4 succeeded at 170.
+Hunk #5 succeeded at 198.
+Hunk #6 succeeded at 211.
+Hunk #7 succeeded at 236.
+Hunk #8 succeeded at 437.
+Hunk #9 succeeded at 445.
+Hunk #10 succeeded at 467.
+Hunk #11 succeeded at 536.
+Not setting time of file libtiff/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/libtiff/tif_open.c tiff-3.8.1-src/libtiff/tif_open.c
+|--- tiff-3.8.1-orig/libtiff/tif_open.c	2005-12-21 13:33:56.000000000 +0100
+|+++ tiff-3.8.1-src/libtiff/tif_open.c	2006-03-13 22:42:22.921875000 +0100
+--------------------------
+Patching file libtiff/tif_open.c using Plan A...
+Hunk #1 succeeded at 511 (offset -2 lines).
+Not setting time of file libtiff/tif_open.c (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/libtiff/tif_unix.c tiff-3.8.1-src/libtiff/tif_unix.c
+|--- tiff-3.8.1-orig/libtiff/tif_unix.c	2005-12-21 13:33:56.000000000 +0100
+|+++ tiff-3.8.1-src/libtiff/tif_unix.c	2006-03-13 22:42:22.921875000 +0100
+--------------------------
+Patching file libtiff/tif_unix.c using Plan A...
+Hunk #1 succeeded at 52.
+Not setting time of file libtiff/tif_unix.c (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/libtiff/tiffio.h tiff-3.8.1-src/libtiff/tiffio.h
+|--- tiff-3.8.1-orig/libtiff/tiffio.h	2005-12-27 12:28:23.000000000 +0100
+|+++ tiff-3.8.1-src/libtiff/tiffio.h	2006-03-13 22:42:22.953125000 +0100
+--------------------------
+Patching file libtiff/tiffio.h using Plan A...
+Hunk #1 succeeded at 27.
+Hunk #2 succeeded at 103 with fuzz 2 (offset -1 lines).
+Hunk #3 succeeded at 291 (offset -1 lines).
+Hunk #4 succeeded at 340 (offset -1 lines).
+Hunk #5 succeeded at 357 (offset -1 lines).
+Not setting time of file libtiff/tiffio.h (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/man/Makefile.in tiff-3.8.1-src/man/Makefile.in
+|--- tiff-3.8.1-orig/man/Makefile.in	2006-03-13 15:58:39.000000000 +0100
+|+++ tiff-3.8.1-src/man/Makefile.in	2006-03-13 22:42:22.953125000 +0100
+--------------------------
+Patching file man/Makefile.in using Plan A...
+Hunk #1 succeeded at 40.
+Hunk #2 succeeded at 105.
+Hunk #3 succeeded at 146.
+Hunk #4 succeeded at 171.
+Not setting time of file man/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/port/Makefile.in tiff-3.8.1-src/port/Makefile.in
+|--- tiff-3.8.1-orig/port/Makefile.in	2006-03-13 15:58:39.000000000 +0100
+|+++ tiff-3.8.1-src/port/Makefile.in	2006-03-13 22:42:22.968750000 +0100
+--------------------------
+Patching file port/Makefile.in using Plan A...
+Hunk #1 succeeded at 41.
+Hunk #2 succeeded at 118.
+Hunk #3 succeeded at 159.
+Hunk #4 succeeded at 184.
+Hunk #5 succeeded at 303.
+Not setting time of file port/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/test/Makefile.in tiff-3.8.1-src/test/Makefile.in
+|--- tiff-3.8.1-orig/test/Makefile.in	2006-03-13 15:58:39.000000000 +0100
+|+++ tiff-3.8.1-src/test/Makefile.in	2006-03-13 22:42:22.984375000 +0100
+--------------------------
+Patching file test/Makefile.in using Plan A...
+Hunk #1 succeeded at 415.
+Not setting time of file test/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/tools/Makefile.in tiff-3.8.1-src/tools/Makefile.in
+|--- tiff-3.8.1-orig/tools/Makefile.in	2006-03-13 15:58:40.000000000 +0100
+|+++ tiff-3.8.1-src/tools/Makefile.in	2006-03-13 22:42:22.984375000 +0100
+--------------------------
+Patching file tools/Makefile.in using Plan A...
+Hunk #1 succeeded at 41.
+Hunk #2 succeeded at 71.
+Hunk #3 succeeded at 91.
+Hunk #4 succeeded at 225.
+Hunk #5 succeeded at 253.
+Hunk #6 succeeded at 266.
+Hunk #7 succeeded at 291.
+Hunk #8 succeeded at 575 (offset 1 line).
+Not setting time of file tools/Makefile.in (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/tools/fax2ps.c tiff-3.8.1-src/tools/fax2ps.c
+|--- tiff-3.8.1-orig/tools/fax2ps.c	2005-03-06 11:51:36.000000000 +0100
+|+++ tiff-3.8.1-src/tools/fax2ps.c	2005-07-17 11:06:44.000000000 +0200
+--------------------------
+Patching file tools/fax2ps.c using Plan A...
+Hunk #1 succeeded at 373.
+Not setting time of file tools/fax2ps.c (time mismatch)
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/tools/fax2tiff.c tiff-3.8.1-src/tools/fax2tiff.c
+|--- tiff-3.8.1-orig/tools/fax2tiff.c	2005-11-02 10:05:57.000000000 +0100
+|+++ tiff-3.8.1-src/tools/fax2tiff.c	2006-03-13 22:42:23.000000000 +0100
+--------------------------
+Patching file tools/fax2tiff.c using Plan A...
+Hunk #1 succeeded at 216.
+Hunk #2 FAILED at 350.
+Not setting time of file tools/fax2tiff.c (time mismatch)
+1 out of 2 hunks FAILED -- saving rejects to file tools/fax2tiff.c.rej
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/tools/sgi2tiff.c tiff-3.8.1-src/tools/sgi2tiff.c
+|--- tiff-3.8.1-orig/tools/sgi2tiff.c	2006-01-23 18:22:44.000000000 +0100
+|+++ tiff-3.8.1-src/tools/sgi2tiff.c	2006-03-13 23:37:01.218750000 +0100
+--------------------------
+Patching file tools/sgi2tiff.c using Plan A...
+Hunk #1 succeeded at 94.
+Hunk #2 succeeded at 160.
+Hmm...  The next patch looks like a unified diff to me...
+The text leading up to this was:
+--------------------------
+|diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.1-orig/tools/tiffdump.c tiff-3.8.1-src/tools/tiffdump.c
+|--- tiff-3.8.1-orig/tools/tiffdump.c	2005-12-02 17:01:33.000000000 +0100
+|+++ tiff-3.8.1-src/tools/tiffdump.c	2006-03-13 22:42:23.046875000 +0100
+--------------------------
+Patching file tools/tiffdump.c using Plan A...
+Hunk #1 succeeded at 323.
+done

@@ -1,0 +1,27 @@
+﻿2016/03/23 20:15:02 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "C:\Users\jumpei tono\Dropbox\研究室関係\研究\Tikhonov_nonlin3D_kx_study\Tikhonov_basic1.vcxproj" (Rebuild ターゲット)。
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /Qpar /arch:SSE2 /fp:precise /Zc:wchar_t /Zc:forScope /openmp /FAs /Fa"x64\Release\\" /Fo"x64\Release\\" /Fd"x64\Release\vc120.pdb" /Gd /TP /errorReport:prompt ExpConfig.cpp main.cpp Tikhonov.cpp Tikhonov3D.cpp
+     1>cl : コマンド ライン warning D9002: 不明なオプション '/arch:SSE2' を無視します
+         ExpConfig.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\IGOR/IGORitx.hpp(361): warning C4244: '引数' : 'const unsigned __int64' から 'double' への変換です。データが失われる可能性があります。
+         main.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\IGOR/IGORitx.hpp(361): warning C4244: '引数' : 'const unsigned __int64' から 'double' への変換です。データが失われる可能性があります。
+     1>main.cpp(42): warning C4244: '初期化中' : 'size_t' から 'double' への変換です。データが失われる可能性があります。
+         Tikhonov.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\IGOR/IGORitx.hpp(361): warning C4244: '引数' : 'const unsigned __int64' から 'double' への変換です。データが失われる可能性があります。
+         Tikhonov3D.cpp
+     1>C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\include\IGOR/IGORitx.hpp(361): warning C4244: '引数' : 'const unsigned __int64' から 'double' への変換です。データが失われる可能性があります。
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\jumpei tono\Dropbox\研究室関係\研究\Tikhonov_nonlin3D_kx_study\x64\Release\Tikhonov_basic1.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\jumpei tono\Dropbox\研究室関係\研究\Tikhonov_nonlin3D_kx_study\x64\Release\Tikhonov_basic1.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE:NO /FIXED:NO /NXCOMPAT /IMPLIB:"C:\Users\jumpei tono\Dropbox\研究室関係\研究\Tikhonov_nonlin3D_kx_study\x64\Release\Tikhonov_basic1.lib" /MACHINE:X64 x64\Release\ExpConfig.obj
+         x64\Release\main.obj
+         x64\Release\Tikhonov.obj
+         x64\Release\Tikhonov3D.obj
+         コード生成しています。
+         コード生成が終了しました。
+         Tikhonov_basic1.vcxproj -> C:\Users\jumpei tono\Dropbox\研究室関係\研究\Tikhonov_nonlin3D_kx_study\x64\Release\Tikhonov_basic1.exe
+     1>プロジェクト "C:\Users\jumpei tono\Dropbox\研究室関係\研究\Tikhonov_nonlin3D_kx_study\Tikhonov_basic1.vcxproj" (Rebuild ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:27.40

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="IGOR">
+</Property><Property Name="ソリューション ファイル" Value="D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\IGOR.sln">
+</Property><Property Name="ユーザー オプション ファイル" Value="D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\IGOR.suo">
+</Property><Property Name="Date" Value="2011年8月27日">
+</Property><Property Name="Time" Value="10:45">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="IGOR.sln" Description="ファイルは正常に D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\IGOR.sln.old としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="" Source="IGOR.suo" Description="ファイルは正常に D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\IGOR.suo.old としてバックアップされました。">
+</Event><Event ErrorLevel="0" Project="IGOR" Source="IGOR.vcproj" Description="Converting project file 'D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\IGOR.vcproj'.">
+</Event><Event ErrorLevel="1" Project="IGOR" Source="IGOR.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="IGOR" Source="IGOR.vcproj" Description="Done converting to new project file 'D:\MyDocument\My Dropbox\visual_studio\MyLibrary\IGOR\IGOR.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="IGOR" Source="IGOR.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="IGOR.sln" Description="ソリューションは正常に変換されました">
+</Event><Event ErrorLevel="3" Project="" Source="IGOR.sln" Description="Converted">
+</Event></UpgradeLog>

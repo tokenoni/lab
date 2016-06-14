@@ -1,0 +1,46 @@
+//-----------------------------------------------------
+//
+//	inverse problem data
+//
+//-----------------------------------------------------
+
+//	experimental configurations
+
+//	pixel number of wavelength (number of experimental data)
+numberOfWavelength = 2048
+
+//	number of temperature	(number of parameters)
+numberOfTemp = 30
+
+//^ rest wavelength
+lambda0 = 656.28
+
+//^ velocity of light
+vlight = 3e+8
+
+//^ boltzman constant
+kb = 1.6e-19
+
+//^ mass of H atom
+mass = 1.67e-27
+
+//^ lambda data (number,start,ratio)
+numberOfLambda = 10
+lambdaStart = 1
+lambdaRatio = 5
+
+//^ temp data min and Max
+tempMin = 1
+tempMax = 3000
+
+//^ sigma change
+sigmaStart = 1250
+sigmaEnd = 1475
+sigmaValue = 10000
+
+//	path for experimental data
+path_expData = data/spec11.itx
+wavelengthData = data/wavelength11.itx
+sigmaData = data/sigma11.itx
+
+

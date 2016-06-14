@@ -1,0 +1,29 @@
+﻿2011/09/01 18:39:26 にビルドを開始しました。
+     1>ノード 2 上のプロジェクト "D:\MyDocument\My Dropbox\visual_studio\MyLibrary\LHDlib\test.vcxproj" (build ターゲット)。
+     1>InitializeBuildStatus:
+         "AlwaysCreate" が指定されたため "Debug\test.unsuccessfulbuild" を作成しています。
+       ClCompile:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>d:\mydocument\my dropbox\visual_studio\mylibrary\lhdlib\lhdretrieve.inl(28): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : 'strcpy' の宣言を確認してください。
+     1>d:\mydocument\my dropbox\visual_studio\mylibrary\lhdlib\lhdretrieve.inl(29): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : 'strcpy' の宣言を確認してください。
+     1>d:\mydocument\my dropbox\visual_studio\mylibrary\lhdlib\lhdretrieve.inl(30): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files\microsoft visual studio 10.0\vc\include\string.h(105) : 'strcpy' の宣言を確認してください。
+       Link:
+         C:\Program Files\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\MyDocument\My Dropbox\visual_studio\MyLibrary\LHDlib\Debug\test.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\test.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\MyDocument\My Dropbox\visual_studio\MyLibrary\LHDlib\Debug\test.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\MyDocument\My Dropbox\visual_studio\MyLibrary\LHDlib\Debug\test.lib" /MACHINE:X86 Debug\main.obj
+         lib\dbstoredll.lib
+         lib\retrieve.lib
+         LINK : 前回のインクリメンタル リンクで D:\MyDocument\My Dropbox\visual_studio\MyLibrary\LHDlib\Debug\test.exe が見つからなかったか、ビルドされませんでした。フル リンクを行います。
+         test.vcxproj -> D:\MyDocument\My Dropbox\visual_studio\MyLibrary\LHDlib\Debug\test.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\MyDocument\My Dropbox\visual_studio\MyLibrary\LHDlib\Debug\test.exe;#1" /manifest Debug\test.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         ファイル "Debug\test.unsuccessfulbuild" を削除しています。
+         "Debug\test.lastbuildstate" のタッチ タスクを実行しています。
+     1>プロジェクト "D:\MyDocument\My Dropbox\visual_studio\MyLibrary\LHDlib\test.vcxproj" (build ターゲット) のビルドが完了しました。
+
+ビルドに成功しました。
+
+経過時間 00:00:01.85

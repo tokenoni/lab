@@ -1,0 +1,120 @@
+tif_dumpmode.lo .libs/tif_dumpmode.o:  \
+ ../../tiff-3.8.2-src/libtiff/tif_dumpmode.c \
+  ../../tiff-3.8.2-src/libtiff/tiffiop.h tif_config.h \
+  g:/mingw/3.3.1/include/fcntl.h g:/mingw/3.3.1/include/_mingw.h \
+  g:/mingw/3.3.1/include/io.h g:/mingw/3.3.1/include/sys/types.h \
+  g:/mingw/3.3.1/include/stddef.h \
+  g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stddef.h \
+  g:/glibc/include/winx/stddefx.h g:/glibc/include/winx/sys/typesx.h \
+  g:/glibc/include/features.h g:/glibc/include/sys/cdefs.h \
+  g:/glibc/include/gnu/stubs.h g:/glibc/include/bits/types.h \
+  g:/glibc/include/bits/wordsize.h g:/glibc/include/bits/typesizes.h \
+  g:/glibc/include/sys/sysmacros.h g:/mingw/3.3.1/include/stdint.h \
+  g:/glibc/include/winx/stdintx.h g:/glibc/include/winx/iox.h \
+  g:/mingw/3.3.1/include/stdlib.h g:/glibc/include/winx/stdlibx.h \
+  g:/mingw/3.3.1/include/getopt.h g:/glibc/include/winx/getoptx.h \
+  g:/glibc/include/winx/fcntlx.h g:/glibc/include/bits/fcntl.h \
+  g:/mingw/3.3.1/include/string.h g:/glibc/include/winx/stringx.h \
+  g:/glibc/include/winx/pathx.h g:/mingw/3.3.1/include/assert.h \
+  g:/glibc/include/winx/assertx.h g:/mingw/3.3.1/include/search.h \
+  g:/glibc/include/winx/searchx.h ../../tiff-3.8.2-src/libtiff/tiffio.h \
+  ../../tiff-3.8.2-src/libtiff/tiff.h \
+  ../../tiff-3.8.2-src/libtiff/tiffconf.h \
+  ../../tiff-3.8.2-src/libtiff/tiffvers.h g:/mingw/3.3.1/include/stdio.h \
+  g:/mingw/3.3.1/include/stdarg.h \
+  g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stdarg.h \
+  g:/glibc/include/winx/stdargx.h g:/glibc/include/winx/stdiox.h \
+  g:/mingw/3.3.1/include/errno.h g:/glibc/include/winx/errnox.h \
+  g:/glibc/include/stdio_ext.h ../../tiff-3.8.2-src/libtiff/tif_dir.h
+
+../../tiff-3.8.2-src/libtiff/tiffiop.h:
+
+tif_config.h:
+
+g:/mingw/3.3.1/include/fcntl.h:
+
+g:/mingw/3.3.1/include/_mingw.h:
+
+g:/mingw/3.3.1/include/io.h:
+
+g:/mingw/3.3.1/include/sys/types.h:
+
+g:/mingw/3.3.1/include/stddef.h:
+
+g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stddef.h:
+
+g:/glibc/include/winx/stddefx.h:
+
+g:/glibc/include/winx/sys/typesx.h:
+
+g:/glibc/include/features.h:
+
+g:/glibc/include/sys/cdefs.h:
+
+g:/glibc/include/gnu/stubs.h:
+
+g:/glibc/include/bits/types.h:
+
+g:/glibc/include/bits/wordsize.h:
+
+g:/glibc/include/bits/typesizes.h:
+
+g:/glibc/include/sys/sysmacros.h:
+
+g:/mingw/3.3.1/include/stdint.h:
+
+g:/glibc/include/winx/stdintx.h:
+
+g:/glibc/include/winx/iox.h:
+
+g:/mingw/3.3.1/include/stdlib.h:
+
+g:/glibc/include/winx/stdlibx.h:
+
+g:/mingw/3.3.1/include/getopt.h:
+
+g:/glibc/include/winx/getoptx.h:
+
+g:/glibc/include/winx/fcntlx.h:
+
+g:/glibc/include/bits/fcntl.h:
+
+g:/mingw/3.3.1/include/string.h:
+
+g:/glibc/include/winx/stringx.h:
+
+g:/glibc/include/winx/pathx.h:
+
+g:/mingw/3.3.1/include/assert.h:
+
+g:/glibc/include/winx/assertx.h:
+
+g:/mingw/3.3.1/include/search.h:
+
+g:/glibc/include/winx/searchx.h:
+
+../../tiff-3.8.2-src/libtiff/tiffio.h:
+
+../../tiff-3.8.2-src/libtiff/tiff.h:
+
+../../tiff-3.8.2-src/libtiff/tiffconf.h:
+
+../../tiff-3.8.2-src/libtiff/tiffvers.h:
+
+g:/mingw/3.3.1/include/stdio.h:
+
+g:/mingw/3.3.1/include/stdarg.h:
+
+g:/mingw/3.3.1/lib/gcc-lib/mingw32/3.3.1/include/stdarg.h:
+
+g:/glibc/include/winx/stdargx.h:
+
+g:/glibc/include/winx/stdiox.h:
+
+g:/mingw/3.3.1/include/errno.h:
+
+g:/glibc/include/winx/errnox.h:
+
+g:/glibc/include/stdio_ext.h:
+
+../../tiff-3.8.2-src/libtiff/tif_dir.h:

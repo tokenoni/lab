@@ -1,0 +1,1898 @@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/Makefile.in tiff-3.8.2-src/Makefile.in
+--- tiff-3.8.2-orig/Makefile.in	2006-03-23 15:44:46.000000000 +0100
++++ tiff-3.8.2-src/Makefile.in	2006-03-23 22:27:23.000000000 +0100
+@@ -41,6 +41,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -133,7 +135,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -174,7 +176,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -199,6 +201,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/configure tiff-3.8.2-src/configure
+--- tiff-3.8.2-orig/configure	2006-03-23 15:44:47.000000000 +0100
++++ tiff-3.8.2-src/configure	2006-03-23 22:27:23.078125000 +0100
+@@ -19970,7 +19970,7 @@ fi
+ 
+ 
+ 
+-if test "$no_x" != "yes" -a "$no_gl" != "yes" \
++if test "$no_gl" != "yes" \
+ 	-a "$no_glu" != "yes" -a "$no_glut" != "yes" ; then
+   HAVE_OPENGL=yes
+ fi
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/Makefile.in tiff-3.8.2-src/contrib/Makefile.in
+--- tiff-3.8.2-orig/contrib/Makefile.in	2006-03-23 15:44:42.000000000 +0100
++++ tiff-3.8.2-src/contrib/Makefile.in	2006-03-23 22:27:23.093750000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -106,7 +108,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -147,7 +149,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -172,6 +174,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/acorn/Makefile.in tiff-3.8.2-src/contrib/acorn/Makefile.in
+--- tiff-3.8.2-orig/contrib/acorn/Makefile.in	2006-03-23 15:44:42.000000000 +0100
++++ tiff-3.8.2-src/contrib/acorn/Makefile.in	2006-03-23 22:27:23.093750000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/addtiffo/Makefile.in tiff-3.8.2-src/contrib/addtiffo/Makefile.in
+--- tiff-3.8.2-orig/contrib/addtiffo/Makefile.in	2006-03-23 15:44:42.000000000 +0100
++++ tiff-3.8.2-src/contrib/addtiffo/Makefile.in	2006-03-23 22:27:23.109375000 +0100
+@@ -41,6 +41,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -79,7 +81,7 @@ CONFIG_CLEAN_FILES =
+ PROGRAMS = $(noinst_PROGRAMS)
+ am_addtiffo_OBJECTS = addtiffo.$(OBJEXT) tif_overview.$(OBJEXT) \
+ 	tif_ovrcache.$(OBJEXT)
+-addtiffo_OBJECTS = $(am_addtiffo_OBJECTS)
++addtiffo_OBJECTS =  addtiffo-res.o $(am_addtiffo_OBJECTS)
+ am__DEPENDENCIES_1 = $(top_builddir)/libtiff/libtiff.la
+ addtiffo_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/libtiff -I$(top_builddir)/libtiff
+@@ -118,7 +120,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -146,7 +148,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LD = @LD@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ $(VERSADD)
+ LIBDIR = @LIBDIR@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+@@ -159,7 +161,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -184,6 +186,9 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
++VERSADD=-Wl,--major-image-version=$(MAJOR) -Wl,--minor-image-version=$(MINOR)
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+@@ -242,7 +247,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ LIBTIFF = $(top_builddir)/libtiff/libtiff.la
+ EXTRA_DIST = README Makefile.vc
+-addtiffo_SOURCES = addtiffo.c tif_overview.c tif_ovrcache.c tif_ovrcache.h
++addtiffo_SOURCES =  addtiffo-res.rc addtiffo.c tif_overview.c tif_ovrcache.c tif_ovrcache.h
+ addtiffo_LDADD = $(LIBTIFF)
+ INCLUDES = -I$(top_srcdir)/libtiff
+ all: all-am
+@@ -299,6 +304,11 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tif_overview.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tif_ovrcache.Po@am__quote@
+ 
++RCTOOL_COMPILE = RCTOOL
++# Rule to make compiled resource (Windows)
++%-res.o: %-res.rc
++	windres --include-dir $(resdir) -i $< -o $@
++
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+ @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/dbs/Makefile.in tiff-3.8.2-src/contrib/dbs/Makefile.in
+--- tiff-3.8.2-orig/contrib/dbs/Makefile.in	2006-03-23 15:44:42.000000000 +0100
++++ tiff-3.8.2-src/contrib/dbs/Makefile.in	2006-03-23 22:27:23.109375000 +0100
+@@ -41,6 +41,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -78,17 +80,17 @@ CONFIG_HEADER = $(top_builddir)/libtiff/
+ 	$(top_builddir)/libtiff/tiffconf.h
+ CONFIG_CLEAN_FILES =
+ PROGRAMS = $(noinst_PROGRAMS)
+-am_tiff_bi_OBJECTS = tiff-bi.$(OBJEXT)
++am_tiff_bi_OBJECTS = tiff-bi.$(OBJEXT) tiff-bi-res.$(OBJEXT)
+ tiff_bi_OBJECTS = $(am_tiff_bi_OBJECTS)
+ am__DEPENDENCIES_1 = $(top_builddir)/libtiff/libtiff.la
+ tiff_bi_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-am_tiff_grayscale_OBJECTS = tiff-grayscale.$(OBJEXT)
++am_tiff_grayscale_OBJECTS = tiff-grayscale.$(OBJEXT) tiff-grayscale-res.$(OBJEXT)
+ tiff_grayscale_OBJECTS = $(am_tiff_grayscale_OBJECTS)
+ tiff_grayscale_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-am_tiff_palette_OBJECTS = tiff-palette.$(OBJEXT)
++am_tiff_palette_OBJECTS = tiff-palette.$(OBJEXT) tiff-palette-res.$(OBJEXT)
+ tiff_palette_OBJECTS = $(am_tiff_palette_OBJECTS)
+ tiff_palette_DEPENDENCIES = $(am__DEPENDENCIES_1)
+-am_tiff_rgb_OBJECTS = tiff-rgb.$(OBJEXT)
++am_tiff_rgb_OBJECTS = tiff-rgb.$(OBJEXT) tiff-rgb-res.$(OBJEXT)
+ tiff_rgb_OBJECTS = $(am_tiff_rgb_OBJECTS)
+ tiff_rgb_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/libtiff -I$(top_builddir)/libtiff
+@@ -136,7 +138,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -164,7 +166,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LD = @LD@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ $(VERSADD)
+ LIBDIR = @LIBDIR@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+@@ -177,7 +179,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -202,6 +204,9 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
++VERSADD=-Wl,--major-image-version=$(MAJOR) -Wl,--minor-image-version=$(MINOR)
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+@@ -334,6 +339,11 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tiff-palette.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tiff-rgb.Po@am__quote@
+ 
++RCTOOL_COMPILE = RCTOOL
++# Rule to make compiled resource (Windows)
++%-res.o: %-res.rc
++	windres --include-dir $(resdir) -i $< -o $@
++
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+ @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/dbs/xtiff/Makefile.in tiff-3.8.2-src/contrib/dbs/xtiff/Makefile.in
+--- tiff-3.8.2-orig/contrib/dbs/xtiff/Makefile.in	2006-03-23 15:54:01.000000000 +0100
++++ tiff-3.8.2-src/contrib/dbs/xtiff/Makefile.in	2006-03-23 22:27:23.125000000 +0100
+@@ -42,6 +42,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -99,7 +101,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -140,7 +142,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -165,6 +167,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/iptcutil/Makefile.in tiff-3.8.2-src/contrib/iptcutil/Makefile.in
+--- tiff-3.8.2-orig/contrib/iptcutil/Makefile.in	2006-03-23 15:44:42.000000000 +0100
++++ tiff-3.8.2-src/contrib/iptcutil/Makefile.in	2006-03-23 22:27:23.125000000 +0100
+@@ -41,6 +41,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -78,7 +80,7 @@ CONFIG_HEADER = $(top_builddir)/libtiff/
+ CONFIG_CLEAN_FILES =
+ PROGRAMS = $(noinst_PROGRAMS)
+ am_iptcutil_OBJECTS = iptcutil.$(OBJEXT)
+-iptcutil_OBJECTS = $(am_iptcutil_OBJECTS)
++iptcutil_OBJECTS =  iptcutil-res.o $(am_iptcutil_OBJECTS)
+ am__DEPENDENCIES_1 = $(top_builddir)/libtiff/libtiff.la
+ iptcutil_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/libtiff -I$(top_builddir)/libtiff
+@@ -117,7 +119,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -145,7 +147,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LD = @LD@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ $(VERSADD)
+ LIBDIR = @LIBDIR@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+@@ -158,7 +160,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -183,6 +185,9 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
++VERSADD=-Wl,--major-image-version=$(MAJOR) -Wl,--minor-image-version=$(MINOR)
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+@@ -241,7 +246,7 @@ target_os = @target_os@
+ target_vendor = @target_vendor@
+ LIBTIFF = $(top_builddir)/libtiff/libtiff.la
+ EXTRA_DIST = README test.iptc test.txt
+-iptcutil_SOURCES = iptcutil.c
++iptcutil_SOURCES =  iptcutil-res.rc iptcutil.c
+ iptcutil_LDADD = $(LIBTIFF)
+ INCLUDES = -I$(top_srcdir)/libtiff
+ all: all-am
+@@ -296,6 +301,11 @@ distclean-compile:
+ 
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/iptcutil.Po@am__quote@
+ 
++RCTOOL_COMPILE = RCTOOL
++# Rule to make compiled resource (Windows)
++%-res.o: %-res.rc
++	windres --include-dir $(resdir) -i $< -o $@
++
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+ @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/mac-cw/Makefile.in tiff-3.8.2-src/contrib/mac-cw/Makefile.in
+--- tiff-3.8.2-orig/contrib/mac-cw/Makefile.in	2006-03-23 15:44:42.000000000 +0100
++++ tiff-3.8.2-src/contrib/mac-cw/Makefile.in	2006-03-23 22:27:23.140625000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/mac-mpw/Makefile.in tiff-3.8.2-src/contrib/mac-mpw/Makefile.in
+--- tiff-3.8.2-orig/contrib/mac-mpw/Makefile.in	2006-03-23 15:44:43.000000000 +0100
++++ tiff-3.8.2-src/contrib/mac-mpw/Makefile.in	2006-03-23 22:27:23.140625000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/mfs/Makefile.in tiff-3.8.2-src/contrib/mfs/Makefile.in
+--- tiff-3.8.2-orig/contrib/mfs/Makefile.in	2006-03-23 15:44:43.000000000 +0100
++++ tiff-3.8.2-src/contrib/mfs/Makefile.in	2006-03-23 22:27:23.156250000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/ojpeg/Makefile.in tiff-3.8.2-src/contrib/ojpeg/Makefile.in
+--- tiff-3.8.2-orig/contrib/ojpeg/Makefile.in	2006-03-23 15:44:43.000000000 +0100
++++ tiff-3.8.2-src/contrib/ojpeg/Makefile.in	2006-03-23 22:27:23.156250000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/pds/Makefile.in tiff-3.8.2-src/contrib/pds/Makefile.in
+--- tiff-3.8.2-orig/contrib/pds/Makefile.in	2006-03-23 15:44:43.000000000 +0100
++++ tiff-3.8.2-src/contrib/pds/Makefile.in	2006-03-23 22:27:23.171875000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/ras/Makefile.in tiff-3.8.2-src/contrib/ras/Makefile.in
+--- tiff-3.8.2-orig/contrib/ras/Makefile.in	2006-03-23 15:44:44.000000000 +0100
++++ tiff-3.8.2-src/contrib/ras/Makefile.in	2006-03-23 22:27:23.171875000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/stream/Makefile.in tiff-3.8.2-src/contrib/stream/Makefile.in
+--- tiff-3.8.2-orig/contrib/stream/Makefile.in	2006-03-23 15:44:44.000000000 +0100
++++ tiff-3.8.2-src/contrib/stream/Makefile.in	2006-03-23 22:27:23.187500000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/tags/Makefile.in tiff-3.8.2-src/contrib/tags/Makefile.in
+--- tiff-3.8.2-orig/contrib/tags/Makefile.in	2006-03-23 15:44:44.000000000 +0100
++++ tiff-3.8.2-src/contrib/tags/Makefile.in	2006-03-23 22:27:23.187500000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/contrib/win_dib/Makefile.in tiff-3.8.2-src/contrib/win_dib/Makefile.in
+--- tiff-3.8.2-orig/contrib/win_dib/Makefile.in	2006-03-23 15:44:44.000000000 +0100
++++ tiff-3.8.2-src/contrib/win_dib/Makefile.in	2006-03-23 22:27:23.203125000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -97,7 +99,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -138,7 +140,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -163,6 +165,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/html/Makefile.in tiff-3.8.2-src/html/Makefile.in
+--- tiff-3.8.2-orig/html/Makefile.in	2006-03-23 15:54:01.000000000 +0100
++++ tiff-3.8.2-src/html/Makefile.in	2006-03-23 22:27:23.218750000 +0100
+@@ -43,6 +43,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -119,7 +121,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -160,7 +162,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -185,6 +187,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/html/images/Makefile.in tiff-3.8.2-src/html/images/Makefile.in
+--- tiff-3.8.2-orig/html/images/Makefile.in	2006-03-23 15:44:44.000000000 +0100
++++ tiff-3.8.2-src/html/images/Makefile.in	2006-03-23 22:27:23.218750000 +0100
+@@ -41,6 +41,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -108,7 +110,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -149,7 +151,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -174,6 +176,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/html/man/Makefile.in tiff-3.8.2-src/html/man/Makefile.in
+--- tiff-3.8.2-orig/html/man/Makefile.in	2006-03-23 15:44:45.000000000 +0100
++++ tiff-3.8.2-src/html/man/Makefile.in	2006-03-23 22:27:23.234375000 +0100
+@@ -41,6 +41,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -108,7 +110,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -149,7 +151,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -174,6 +176,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/libtiff/Makefile.in tiff-3.8.2-src/libtiff/Makefile.in
+--- tiff-3.8.2-orig/libtiff/Makefile.in	2006-03-23 15:44:45.000000000 +0100
++++ tiff-3.8.2-src/libtiff/Makefile.in	2006-03-23 22:27:23.234375000 +0100
+@@ -43,7 +43,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
+-VPATH = @srcdir@
++resdir = @top_builddir@res
++VPATH = @srcdir@:@top_builddir@res
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+ pkgincludedir = $(includedir)/@PACKAGE@
+@@ -93,6 +94,9 @@ am__installdirs = "$(DESTDIR)$(libdir)" 
+ 	"$(DESTDIR)$(libtiffincludedir)"
+ libLTLIBRARIES_INSTALL = $(INSTALL)
+ LTLIBRARIES = $(lib_LTLIBRARIES)
++libtiff_la_LIBADD = -L. -ltiff
++libtiff_dll_OBJECTS = $(libtiff_la_OBJECTS:.lo=.o) libtiff-dllversion.o libtiff-dll-res.o
++libtiffxx_dll_OBJECTS = $(libtiffxx_la_OBJECTS:.lo=.o) libtiff-dllversion.o libtiff-dll-res.o
+ am__DEPENDENCIES_1 = $(top_builddir)/port/libport.la
+ libtiff_la_DEPENDENCIES = $(am__DEPENDENCIES_1)
+ am__objects_1 = tif_aux.lo tif_close.lo tif_codec.lo tif_color.lo \
+@@ -124,6 +128,7 @@ LTCOMPILE = $(LIBTOOL) --tag=CC --mode=c
+ 	$(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) \
+ 	$(AM_CFLAGS) $(CFLAGS)
+ CCLD = $(CC)
++LATOOL = LATOOL
+ LINK = $(LIBTOOL) --tag=CC --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@
+ CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+@@ -165,7 +170,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -193,7 +198,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LD = @LD@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ $(VERSADD)
+ LIBDIR = @LIBDIR@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+@@ -206,7 +211,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -231,6 +236,9 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
++VERSADD=-Wl,--major-image-version=$(MAJOR) -Wl,--minor-image-version=$(MINOR)
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+@@ -429,6 +437,7 @@ distclean-hdr:
+ install-libLTLIBRARIES: $(lib_LTLIBRARIES)
+ 	@$(NORMAL_INSTALL)
+ 	test -z "$(libdir)" || $(mkdir_p) "$(DESTDIR)$(libdir)"
++	test -z "$(bindir)" || $(mkdir_p) "$(DESTDIR)$(bindir)"
+ 	@list='$(lib_LTLIBRARIES)'; for p in $$list; do \
+ 	  if test -f $$p; then \
+ 	    f=$(am__strip_dir) \
+@@ -436,6 +445,11 @@ install-libLTLIBRARIES: $(lib_LTLIBRARIE
+ 	    $(LIBTOOL) --mode=install $(libLTLIBRARIES_INSTALL) $(INSTALL_STRIP_FLAG) "$$p" "$(DESTDIR)$(libdir)/$$f"; \
+ 	  else :; fi; \
+ 	done
++	$(INSTALL_DATA) .libs/libtiff.a $(DESTDIR)$(libdir)/libtiff.a
++	$(INSTALL_DATA) .libs/libtiff.lib $(DESTDIR)$(libdir)/libtiff.lib
++	$(INSTALL_DATA) .libs/libtiff-bcc.lib $(DESTDIR)$(libdir)/libtiff-bcc.lib
++	$(INSTALL_DATA) .libs/libtiff*.def $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) .libs/libtiff*.dll $(DESTDIR)$(bindir)
+ 
+ uninstall-libLTLIBRARIES:
+ 	@$(NORMAL_UNINSTALL)
+@@ -453,10 +467,19 @@ clean-libLTLIBRARIES:
+ 	  echo "rm -f \"$${dir}/so_locations\""; \
+ 	  rm -f "$${dir}/so_locations"; \
+ 	done
+-libtiff.la: $(libtiff_la_OBJECTS) $(libtiff_la_DEPENDENCIES) 
+-	$(LINK) -rpath $(libdir) $(libtiff_la_LDFLAGS) $(libtiff_la_OBJECTS) $(libtiff_la_LIBADD) $(LIBS)
+-libtiffxx.la: $(libtiffxx_la_OBJECTS) $(libtiffxx_la_DEPENDENCIES) 
+-	$(CXXLINK) $(am_libtiffxx_la_rpath) $(libtiffxx_la_LDFLAGS) $(libtiffxx_la_OBJECTS) $(libtiffxx_la_LIBADD) $(LIBS)
++libtiff.la: $(libtiff_la_OBJECTS) $(libtiff_la_DEPENDENCIES) libtiff-dllversion.lo libtiff-dll-res.lo
++	$(LATOOL) -o $@ -rpath $(libdir) $(libtiff_la_LDFLAGS) $(libtiff_la_OBJECTS) $(libtiff_la_LIBADD) $(LIBS)
++	cd .libs && rm -f libtiff.def \
++	&& o2dll -o libtiff.dll -l libtiff $(libtiff_dll_OBJECTS) \
++		$(libtiff_la_LDFLAGS) $(LDFLAGS) $(LIBS) 
++libtiffxx.la: $(libtiffxx_la_OBJECTS) $(libtiffxx_la_DEPENDENCIES) libtiff-dllversion.lo libtiff-dll-res.lo
++	$(LATOOL) -o $@ $(am_libtiffxx_la_rpath) $(libtiffxx_la_LDFLAGS) $(libtiffxx_la_OBJECTS) $(libtiffxx_la_LIBADD) $(LIBS)
++	cd .libs && rm -f libtiffxx.def \
++	&& o2dll -o libtiffxx.dll -l libtiffxx -u $(libtiffxx_dll_OBJECTS) \
++		$(libtiffxx_la_LDFLAGS) $(LDFLAGS) -L. -ltiff $(LIBS)
++
++libtiff-dll-res.lo: $(resdir)/libtiff-dll-res.rc
++	$(RCTOOL_COMPILE) $(resdir)/libtiff-dll-res.rc
+ 
+ clean-noinstPROGRAMS:
+ 	@list='$(noinst_PROGRAMS)'; for p in $$list; do \
+@@ -513,6 +536,11 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tif_write.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tif_zip.Plo@am__quote@
+ 
++RCTOOL_COMPILE = RCTOOL
++# Rule to make compiled resource (Windows)
++%-res.o: %-res.rc
++	windres --include-dir $(resdir) -i $< -o $@
++
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+ @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/libtiff/tif_open.c tiff-3.8.2-src/libtiff/tif_open.c
+--- tiff-3.8.2-orig/libtiff/tif_open.c	2006-03-21 17:42:50.000000000 +0100
++++ tiff-3.8.2-src/libtiff/tif_open.c	2006-03-23 22:27:23.250000000 +0100
+@@ -511,6 +511,9 @@ thandle_t
+ TIFFSetClientdata(TIFF* tif, thandle_t newvalue)
+ {
+ 	thandle_t m = tif->tif_clientdata;
++#ifdef USE_WIN32_FILEIO
++	newvalue = (thandle_t) _get_osfhandle(newvalue);
++#endif /* USE_WIN32_FILEIO */
+ 	tif->tif_clientdata = newvalue;
+ 	return m;
+ }
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/libtiff/tif_unix.c tiff-3.8.2-src/libtiff/tif_unix.c
+--- tiff-3.8.2-orig/libtiff/tif_unix.c	2006-03-21 17:42:50.000000000 +0100
++++ tiff-3.8.2-src/libtiff/tif_unix.c	2006-03-23 22:27:23.250000000 +0100
+@@ -52,6 +52,10 @@
+ 
+ #include "tiffiop.h"
+ 
++#ifdef _WIN32
++# include <windows.h>
++#endif /* _WIN32 */
++
+ static tsize_t
+ _tiffReadProc(thandle_t fd, tdata_t buf, tsize_t size)
+ {
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/libtiff/tiffio.h tiff-3.8.2-src/libtiff/tiffio.h
+--- tiff-3.8.2-orig/libtiff/tiffio.h	2006-03-21 17:42:50.000000000 +0100
++++ tiff-3.8.2-src/libtiff/tiffio.h	2006-03-28 10:35:37.234375000 +0200
+@@ -27,6 +27,30 @@
+ #ifndef _TIFFIO_
+ #define	_TIFFIO_
+ 
++#ifndef __GNUC__
++# define __DLL_IMPORT__  __declspec(dllimport)
++# define __DLL_EXPORT__  __declspec(dllexport)
++#else
++# define __DLL_IMPORT__  __attribute__((dllimport)) extern
++# define __DLL_EXPORT__  __attribute__((dllexport)) extern
++#endif 
++
++#if (defined __WIN32__) || (defined _WIN32)
++# ifdef BUILD_LIBTIFF_DLL
++#  define LIBTIFF_DLL_IMPEXP     __DLL_EXPORT__
++# elif defined(LIBTIFF_STATIC)
++#  define LIBTIFF_DLL_IMPEXP      
++# elif defined (USE_LIBTIFF_DLL)
++#  define LIBTIFF_DLL_IMPEXP     __DLL_IMPORT__
++# elif defined (USE_LIBTIFF_STATIC)
++#  define LIBTIFF_DLL_IMPEXP      
++# else /* assume USE_LIBTIFF_DLL */
++#  define LIBTIFF_DLL_IMPEXP     __DLL_IMPORT__
++# endif
++#else /* __WIN32__ */
++# define LIBTIFF_DLL_IMPEXP  
++#endif
++
+ /*
+  * TIFF I/O Library Definitions.
+  */
+@@ -79,10 +103,20 @@ typedef	uint32 toff_t;		/* file offset *
+  */
+ 
+ #if defined(_WINDOWS) || defined(__WIN32__) || defined(_Windows)
++#  define BINMODE "b"
+ #  if !defined(__CYGWIN) && !defined(AVOID_WIN32_FILEIO) && !defined(USE_WIN32_FILEIO)
+ #    define AVOID_WIN32_FILEIO
+ #  endif
+-#endif
++#  include <fcntl.h>
++#  include <io.h>
++#  ifdef SET_BINARY
++#    undef SET_BINARY
++#  endif /* SET_BINARY */
++#  define SET_BINARY(f) do {if (!_isatty(f)) _setmode(f,_O_BINARY);} while (0)
++#else /* Windows */
++#  define BINMODE
++#  define SET_BINARY(f) (void)0
++#endif /* Windows */
+ 
+ #if defined(USE_WIN32_FILEIO)
+ # define VC_EXTRALEAN
+@@ -266,30 +300,30 @@ typedef	int (*TIFFMapFileProc)(thandle_t
+ typedef	void (*TIFFUnmapFileProc)(thandle_t, tdata_t, toff_t);
+ typedef	void (*TIFFExtendProc)(TIFF*); 
+ 
+-extern	const char* TIFFGetVersion(void);
++LIBTIFF_DLL_IMPEXP	const char* TIFFGetVersion(void);
+ 
+-extern	const TIFFCodec* TIFFFindCODEC(uint16);
+-extern	TIFFCodec* TIFFRegisterCODEC(uint16, const char*, TIFFInitMethod);
+-extern	void TIFFUnRegisterCODEC(TIFFCodec*);
+-extern  int TIFFIsCODECConfigured(uint16);
+-extern	TIFFCodec* TIFFGetConfiguredCODECs(void);
++LIBTIFF_DLL_IMPEXP	const TIFFCodec* TIFFFindCODEC(uint16);
++LIBTIFF_DLL_IMPEXP	TIFFCodec* TIFFRegisterCODEC(uint16, const char*, TIFFInitMethod);
++LIBTIFF_DLL_IMPEXP	void TIFFUnRegisterCODEC(TIFFCodec*);
++LIBTIFF_DLL_IMPEXP  int TIFFIsCODECConfigured(uint16);
++LIBTIFF_DLL_IMPEXP	TIFFCodec* TIFFGetConfiguredCODECs(void);
+ 
+ /*
+  * Auxiliary functions.
+  */
+ 
+-extern	tdata_t _TIFFmalloc(tsize_t);
+-extern	tdata_t _TIFFrealloc(tdata_t, tsize_t);
+-extern	void _TIFFmemset(tdata_t, int, tsize_t);
+-extern	void _TIFFmemcpy(tdata_t, const tdata_t, tsize_t);
+-extern	int _TIFFmemcmp(const tdata_t, const tdata_t, tsize_t);
+-extern	void _TIFFfree(tdata_t);
++LIBTIFF_DLL_IMPEXP	tdata_t _TIFFmalloc(tsize_t);
++LIBTIFF_DLL_IMPEXP	tdata_t _TIFFrealloc(tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	void _TIFFmemset(tdata_t, int, tsize_t);
++LIBTIFF_DLL_IMPEXP	void _TIFFmemcpy(tdata_t, const tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	int _TIFFmemcmp(const tdata_t, const tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	void _TIFFfree(tdata_t);
+ 
+ /*
+ ** Stuff, related to tag handling and creating custom tags.
+ */
+-extern  int  TIFFGetTagListCount( TIFF * );
+-extern  ttag_t TIFFGetTagListEntry( TIFF *, int tag_index );
++LIBTIFF_DLL_IMPEXP  int  TIFFGetTagListCount( TIFF * );
++LIBTIFF_DLL_IMPEXP  ttag_t TIFFGetTagListEntry( TIFF *, int tag_index );
+     
+ #define	TIFF_ANY	TIFF_NOTYPE	/* for field descriptor searching */
+ #define	TIFF_VARIABLE	-1		/* marker for variable length tags */
+@@ -315,12 +349,12 @@ typedef struct _TIFFTagValue {
+     void           *value;
+ } TIFFTagValue;
+ 
+-extern	void TIFFMergeFieldInfo(TIFF*, const TIFFFieldInfo[], int);
+-extern	const TIFFFieldInfo* TIFFFindFieldInfo(TIFF*, ttag_t, TIFFDataType);
+-extern  const TIFFFieldInfo* TIFFFindFieldInfoByName(TIFF* , const char *,
++LIBTIFF_DLL_IMPEXP	void TIFFMergeFieldInfo(TIFF*, const TIFFFieldInfo[], int);
++LIBTIFF_DLL_IMPEXP	const TIFFFieldInfo* TIFFFindFieldInfo(TIFF*, ttag_t, TIFFDataType);
++LIBTIFF_DLL_IMPEXP  const TIFFFieldInfo* TIFFFindFieldInfoByName(TIFF* , const char *,
+ 						     TIFFDataType);
+-extern	const TIFFFieldInfo* TIFFFieldWithTag(TIFF*, ttag_t);
+-extern	const TIFFFieldInfo* TIFFFieldWithName(TIFF*, const char *);
++LIBTIFF_DLL_IMPEXP	const TIFFFieldInfo* TIFFFieldWithTag(TIFF*, ttag_t);
++LIBTIFF_DLL_IMPEXP	const TIFFFieldInfo* TIFFFieldWithName(TIFF*, const char *);
+ 
+ typedef	int (*TIFFVSetMethod)(TIFF*, ttag_t, va_list);
+ typedef	int (*TIFFVGetMethod)(TIFF*, ttag_t, va_list);
+@@ -332,178 +366,178 @@ typedef struct {
+     TIFFPrintMethod	printdir;	/* directory print routine */
+ } TIFFTagMethods;
+         
+-extern  TIFFTagMethods *TIFFAccessTagMethods( TIFF * );
+-extern  void *TIFFGetClientInfo( TIFF *, const char * );
+-extern  void TIFFSetClientInfo( TIFF *, void *, const char * );
+-
+-extern	void TIFFCleanup(TIFF*);
+-extern	void TIFFClose(TIFF*);
+-extern	int TIFFFlush(TIFF*);
+-extern	int TIFFFlushData(TIFF*);
+-extern	int TIFFGetField(TIFF*, ttag_t, ...);
+-extern	int TIFFVGetField(TIFF*, ttag_t, va_list);
+-extern	int TIFFGetFieldDefaulted(TIFF*, ttag_t, ...);
+-extern	int TIFFVGetFieldDefaulted(TIFF*, ttag_t, va_list);
+-extern	int TIFFReadDirectory(TIFF*);
+-extern	int TIFFReadCustomDirectory(TIFF*, toff_t, const TIFFFieldInfo[],
++LIBTIFF_DLL_IMPEXP  TIFFTagMethods *TIFFAccessTagMethods( TIFF * );
++LIBTIFF_DLL_IMPEXP  void *TIFFGetClientInfo( TIFF *, const char * );
++LIBTIFF_DLL_IMPEXP  void TIFFSetClientInfo( TIFF *, void *, const char * );
++
++LIBTIFF_DLL_IMPEXP	void TIFFCleanup(TIFF*);
++LIBTIFF_DLL_IMPEXP	void TIFFClose(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFFlush(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFFlushData(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFGetField(TIFF*, ttag_t, ...);
++LIBTIFF_DLL_IMPEXP	int TIFFVGetField(TIFF*, ttag_t, va_list);
++LIBTIFF_DLL_IMPEXP	int TIFFGetFieldDefaulted(TIFF*, ttag_t, ...);
++LIBTIFF_DLL_IMPEXP	int TIFFVGetFieldDefaulted(TIFF*, ttag_t, va_list);
++LIBTIFF_DLL_IMPEXP	int TIFFReadDirectory(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFReadCustomDirectory(TIFF*, toff_t, const TIFFFieldInfo[],
+ 				    size_t);
+-extern	int TIFFReadEXIFDirectory(TIFF*, toff_t);
+-extern	tsize_t TIFFScanlineSize(TIFF*);
+-extern	tsize_t TIFFRasterScanlineSize(TIFF*);
+-extern	tsize_t TIFFStripSize(TIFF*);
+-extern	tsize_t TIFFRawStripSize(TIFF*, tstrip_t);
+-extern	tsize_t TIFFVStripSize(TIFF*, uint32);
+-extern	tsize_t TIFFTileRowSize(TIFF*);
+-extern	tsize_t TIFFTileSize(TIFF*);
+-extern	tsize_t TIFFVTileSize(TIFF*, uint32);
+-extern	uint32 TIFFDefaultStripSize(TIFF*, uint32);
+-extern	void TIFFDefaultTileSize(TIFF*, uint32*, uint32*);
+-extern	int TIFFFileno(TIFF*);
+-extern  int TIFFSetFileno(TIFF*, int);
+-extern  thandle_t TIFFClientdata(TIFF*);
+-extern  thandle_t TIFFSetClientdata(TIFF*, thandle_t);
+-extern	int TIFFGetMode(TIFF*);
+-extern	int TIFFSetMode(TIFF*, int);
+-extern	int TIFFIsTiled(TIFF*);
+-extern	int TIFFIsByteSwapped(TIFF*);
+-extern	int TIFFIsUpSampled(TIFF*);
+-extern	int TIFFIsMSB2LSB(TIFF*);
+-extern	int TIFFIsBigEndian(TIFF*);
+-extern	TIFFReadWriteProc TIFFGetReadProc(TIFF*);
+-extern	TIFFReadWriteProc TIFFGetWriteProc(TIFF*);
+-extern	TIFFSeekProc TIFFGetSeekProc(TIFF*);
+-extern	TIFFCloseProc TIFFGetCloseProc(TIFF*);
+-extern	TIFFSizeProc TIFFGetSizeProc(TIFF*);
+-extern	TIFFMapFileProc TIFFGetMapFileProc(TIFF*);
+-extern	TIFFUnmapFileProc TIFFGetUnmapFileProc(TIFF*);
+-extern	uint32 TIFFCurrentRow(TIFF*);
+-extern	tdir_t TIFFCurrentDirectory(TIFF*);
+-extern	tdir_t TIFFNumberOfDirectories(TIFF*);
+-extern	uint32 TIFFCurrentDirOffset(TIFF*);
+-extern	tstrip_t TIFFCurrentStrip(TIFF*);
+-extern	ttile_t TIFFCurrentTile(TIFF*);
+-extern	int TIFFReadBufferSetup(TIFF*, tdata_t, tsize_t);
+-extern	int TIFFWriteBufferSetup(TIFF*, tdata_t, tsize_t);
+-extern	int TIFFSetupStrips(TIFF *);
+-extern  int TIFFWriteCheck(TIFF*, int, const char *);
+-extern	void TIFFFreeDirectory(TIFF*);
+-extern  int TIFFCreateDirectory(TIFF*);
+-extern	int TIFFLastDirectory(TIFF*);
+-extern	int TIFFSetDirectory(TIFF*, tdir_t);
+-extern	int TIFFSetSubDirectory(TIFF*, uint32);
+-extern	int TIFFUnlinkDirectory(TIFF*, tdir_t);
+-extern	int TIFFSetField(TIFF*, ttag_t, ...);
+-extern	int TIFFVSetField(TIFF*, ttag_t, va_list);
+-extern	int TIFFWriteDirectory(TIFF *);
+-extern	int TIFFCheckpointDirectory(TIFF *);
+-extern	int TIFFRewriteDirectory(TIFF *);
+-extern	int TIFFReassignTagToIgnore(enum TIFFIgnoreSense, int);
++LIBTIFF_DLL_IMPEXP	int TIFFReadEXIFDirectory(TIFF*, toff_t);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFScanlineSize(TIFF*);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFRasterScanlineSize(TIFF*);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFStripSize(TIFF*);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFRawStripSize(TIFF*, tstrip_t);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFVStripSize(TIFF*, uint32);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFTileRowSize(TIFF*);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFTileSize(TIFF*);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFVTileSize(TIFF*, uint32);
++LIBTIFF_DLL_IMPEXP	uint32 TIFFDefaultStripSize(TIFF*, uint32);
++LIBTIFF_DLL_IMPEXP	void TIFFDefaultTileSize(TIFF*, uint32*, uint32*);
++LIBTIFF_DLL_IMPEXP	int TIFFFileno(TIFF*);
++LIBTIFF_DLL_IMPEXP  int TIFFSetFileno(TIFF*, int);
++LIBTIFF_DLL_IMPEXP  thandle_t TIFFClientdata(TIFF*);
++LIBTIFF_DLL_IMPEXP  thandle_t TIFFSetClientdata(TIFF*, thandle_t);
++LIBTIFF_DLL_IMPEXP	int TIFFGetMode(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFSetMode(TIFF*, int);
++LIBTIFF_DLL_IMPEXP	int TIFFIsTiled(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFIsByteSwapped(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFIsUpSampled(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFIsMSB2LSB(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFIsBigEndian(TIFF*);
++LIBTIFF_DLL_IMPEXP	TIFFReadWriteProc TIFFGetReadProc(TIFF*);
++LIBTIFF_DLL_IMPEXP	TIFFReadWriteProc TIFFGetWriteProc(TIFF*);
++LIBTIFF_DLL_IMPEXP	TIFFSeekProc TIFFGetSeekProc(TIFF*);
++LIBTIFF_DLL_IMPEXP	TIFFCloseProc TIFFGetCloseProc(TIFF*);
++LIBTIFF_DLL_IMPEXP	TIFFSizeProc TIFFGetSizeProc(TIFF*);
++LIBTIFF_DLL_IMPEXP	TIFFMapFileProc TIFFGetMapFileProc(TIFF*);
++LIBTIFF_DLL_IMPEXP	TIFFUnmapFileProc TIFFGetUnmapFileProc(TIFF*);
++LIBTIFF_DLL_IMPEXP	uint32 TIFFCurrentRow(TIFF*);
++LIBTIFF_DLL_IMPEXP	tdir_t TIFFCurrentDirectory(TIFF*);
++LIBTIFF_DLL_IMPEXP	tdir_t TIFFNumberOfDirectories(TIFF*);
++LIBTIFF_DLL_IMPEXP	uint32 TIFFCurrentDirOffset(TIFF*);
++LIBTIFF_DLL_IMPEXP	tstrip_t TIFFCurrentStrip(TIFF*);
++LIBTIFF_DLL_IMPEXP	ttile_t TIFFCurrentTile(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFReadBufferSetup(TIFF*, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	int TIFFWriteBufferSetup(TIFF*, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	int TIFFSetupStrips(TIFF *);
++LIBTIFF_DLL_IMPEXP  int TIFFWriteCheck(TIFF*, int, const char *);
++LIBTIFF_DLL_IMPEXP	void TIFFFreeDirectory(TIFF*);
++LIBTIFF_DLL_IMPEXP  int TIFFCreateDirectory(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFLastDirectory(TIFF*);
++LIBTIFF_DLL_IMPEXP	int TIFFSetDirectory(TIFF*, tdir_t);
++LIBTIFF_DLL_IMPEXP	int TIFFSetSubDirectory(TIFF*, uint32);
++LIBTIFF_DLL_IMPEXP	int TIFFUnlinkDirectory(TIFF*, tdir_t);
++LIBTIFF_DLL_IMPEXP	int TIFFSetField(TIFF*, ttag_t, ...);
++LIBTIFF_DLL_IMPEXP	int TIFFVSetField(TIFF*, ttag_t, va_list);
++LIBTIFF_DLL_IMPEXP	int TIFFWriteDirectory(TIFF *);
++LIBTIFF_DLL_IMPEXP	int TIFFCheckpointDirectory(TIFF *);
++LIBTIFF_DLL_IMPEXP	int TIFFRewriteDirectory(TIFF *);
++LIBTIFF_DLL_IMPEXP	int TIFFReassignTagToIgnore(enum TIFFIgnoreSense, int);
+ 
+ #if defined(c_plusplus) || defined(__cplusplus)
+-extern	void TIFFPrintDirectory(TIFF*, FILE*, long = 0);
+-extern	int TIFFReadScanline(TIFF*, tdata_t, uint32, tsample_t = 0);
+-extern	int TIFFWriteScanline(TIFF*, tdata_t, uint32, tsample_t = 0);
+-extern	int TIFFReadRGBAImage(TIFF*, uint32, uint32, uint32*, int = 0);
+-extern	int TIFFReadRGBAImageOriented(TIFF*, uint32, uint32, uint32*,
++LIBTIFF_DLL_IMPEXP	void TIFFPrintDirectory(TIFF*, FILE*, long = 0);
++LIBTIFF_DLL_IMPEXP	int TIFFReadScanline(TIFF*, tdata_t, uint32, tsample_t = 0);
++LIBTIFF_DLL_IMPEXP	int TIFFWriteScanline(TIFF*, tdata_t, uint32, tsample_t = 0);
++LIBTIFF_DLL_IMPEXP	int TIFFReadRGBAImage(TIFF*, uint32, uint32, uint32*, int = 0);
++LIBTIFF_DLL_IMPEXP	int TIFFReadRGBAImageOriented(TIFF*, uint32, uint32, uint32*,
+ 				      int = ORIENTATION_BOTLEFT, int = 0);
+ #else
+-extern	void TIFFPrintDirectory(TIFF*, FILE*, long);
+-extern	int TIFFReadScanline(TIFF*, tdata_t, uint32, tsample_t);
+-extern	int TIFFWriteScanline(TIFF*, tdata_t, uint32, tsample_t);
+-extern	int TIFFReadRGBAImage(TIFF*, uint32, uint32, uint32*, int);
+-extern	int TIFFReadRGBAImageOriented(TIFF*, uint32, uint32, uint32*, int, int);
++LIBTIFF_DLL_IMPEXP	void TIFFPrintDirectory(TIFF*, FILE*, long);
++LIBTIFF_DLL_IMPEXP	int TIFFReadScanline(TIFF*, tdata_t, uint32, tsample_t);
++LIBTIFF_DLL_IMPEXP	int TIFFWriteScanline(TIFF*, tdata_t, uint32, tsample_t);
++LIBTIFF_DLL_IMPEXP	int TIFFReadRGBAImage(TIFF*, uint32, uint32, uint32*, int);
++LIBTIFF_DLL_IMPEXP	int TIFFReadRGBAImageOriented(TIFF*, uint32, uint32, uint32*, int, int);
+ #endif
+ 
+-extern	int TIFFReadRGBAStrip(TIFF*, tstrip_t, uint32 * );
+-extern	int TIFFReadRGBATile(TIFF*, uint32, uint32, uint32 * );
+-extern	int TIFFRGBAImageOK(TIFF*, char [1024]);
+-extern	int TIFFRGBAImageBegin(TIFFRGBAImage*, TIFF*, int, char [1024]);
+-extern	int TIFFRGBAImageGet(TIFFRGBAImage*, uint32*, uint32, uint32);
+-extern	void TIFFRGBAImageEnd(TIFFRGBAImage*);
+-extern	TIFF* TIFFOpen(const char*, const char*);
++LIBTIFF_DLL_IMPEXP	int TIFFReadRGBAStrip(TIFF*, tstrip_t, uint32 * );
++LIBTIFF_DLL_IMPEXP	int TIFFReadRGBATile(TIFF*, uint32, uint32, uint32 * );
++LIBTIFF_DLL_IMPEXP	int TIFFRGBAImageOK(TIFF*, char [1024]);
++LIBTIFF_DLL_IMPEXP	int TIFFRGBAImageBegin(TIFFRGBAImage*, TIFF*, int, char [1024]);
++LIBTIFF_DLL_IMPEXP	int TIFFRGBAImageGet(TIFFRGBAImage*, uint32*, uint32, uint32);
++LIBTIFF_DLL_IMPEXP	void TIFFRGBAImageEnd(TIFFRGBAImage*);
++LIBTIFF_DLL_IMPEXP	TIFF* TIFFOpen(const char*, const char*);
+ # ifdef __WIN32__
+-extern	TIFF* TIFFOpenW(const wchar_t*, const char*);
++LIBTIFF_DLL_IMPEXP	TIFF* TIFFOpenW(const wchar_t*, const char*);
+ # endif /* __WIN32__ */
+-extern	TIFF* TIFFFdOpen(int, const char*, const char*);
+-extern	TIFF* TIFFClientOpen(const char*, const char*,
++LIBTIFF_DLL_IMPEXP	TIFF* TIFFFdOpen(int, const char*, const char*);
++LIBTIFF_DLL_IMPEXP	TIFF* TIFFClientOpen(const char*, const char*,
+ 	    thandle_t,
+ 	    TIFFReadWriteProc, TIFFReadWriteProc,
+ 	    TIFFSeekProc, TIFFCloseProc,
+ 	    TIFFSizeProc,
+ 	    TIFFMapFileProc, TIFFUnmapFileProc);
+-extern	const char* TIFFFileName(TIFF*);
+-extern	const char* TIFFSetFileName(TIFF*, const char *);
+-extern	void TIFFError(const char*, const char*, ...);
+-extern	void TIFFErrorExt(thandle_t, const char*, const char*, ...);
+-extern	void TIFFWarning(const char*, const char*, ...);
+-extern	void TIFFWarningExt(thandle_t, const char*, const char*, ...);
+-extern	TIFFErrorHandler TIFFSetErrorHandler(TIFFErrorHandler);
+-extern	TIFFErrorHandlerExt TIFFSetErrorHandlerExt(TIFFErrorHandlerExt);
+-extern	TIFFErrorHandler TIFFSetWarningHandler(TIFFErrorHandler);
+-extern	TIFFErrorHandlerExt TIFFSetWarningHandlerExt(TIFFErrorHandlerExt);
+-extern	TIFFExtendProc TIFFSetTagExtender(TIFFExtendProc);
+-extern	ttile_t TIFFComputeTile(TIFF*, uint32, uint32, uint32, tsample_t);
+-extern	int TIFFCheckTile(TIFF*, uint32, uint32, uint32, tsample_t);
+-extern	ttile_t TIFFNumberOfTiles(TIFF*);
+-extern	tsize_t TIFFReadTile(TIFF*,
++LIBTIFF_DLL_IMPEXP	const char* TIFFFileName(TIFF*);
++LIBTIFF_DLL_IMPEXP	const char* TIFFSetFileName(TIFF*, const char *);
++LIBTIFF_DLL_IMPEXP	void TIFFError(const char*, const char*, ...);
++LIBTIFF_DLL_IMPEXP	void TIFFErrorExt(thandle_t, const char*, const char*, ...);
++LIBTIFF_DLL_IMPEXP	void TIFFWarning(const char*, const char*, ...);
++LIBTIFF_DLL_IMPEXP	void TIFFWarningExt(thandle_t, const char*, const char*, ...);
++LIBTIFF_DLL_IMPEXP	TIFFErrorHandler TIFFSetErrorHandler(TIFFErrorHandler);
++LIBTIFF_DLL_IMPEXP	TIFFErrorHandlerExt TIFFSetErrorHandlerExt(TIFFErrorHandlerExt);
++LIBTIFF_DLL_IMPEXP	TIFFErrorHandler TIFFSetWarningHandler(TIFFErrorHandler);
++LIBTIFF_DLL_IMPEXP	TIFFErrorHandlerExt TIFFSetWarningHandlerExt(TIFFErrorHandlerExt);
++LIBTIFF_DLL_IMPEXP	TIFFExtendProc TIFFSetTagExtender(TIFFExtendProc);
++LIBTIFF_DLL_IMPEXP	ttile_t TIFFComputeTile(TIFF*, uint32, uint32, uint32, tsample_t);
++LIBTIFF_DLL_IMPEXP	int TIFFCheckTile(TIFF*, uint32, uint32, uint32, tsample_t);
++LIBTIFF_DLL_IMPEXP	ttile_t TIFFNumberOfTiles(TIFF*);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFReadTile(TIFF*,
+ 	    tdata_t, uint32, uint32, uint32, tsample_t);
+-extern	tsize_t TIFFWriteTile(TIFF*,
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFWriteTile(TIFF*,
+ 	    tdata_t, uint32, uint32, uint32, tsample_t);
+-extern	tstrip_t TIFFComputeStrip(TIFF*, uint32, tsample_t);
+-extern	tstrip_t TIFFNumberOfStrips(TIFF*);
+-extern	tsize_t TIFFReadEncodedStrip(TIFF*, tstrip_t, tdata_t, tsize_t);
+-extern	tsize_t TIFFReadRawStrip(TIFF*, tstrip_t, tdata_t, tsize_t);
+-extern	tsize_t TIFFReadEncodedTile(TIFF*, ttile_t, tdata_t, tsize_t);
+-extern	tsize_t TIFFReadRawTile(TIFF*, ttile_t, tdata_t, tsize_t);
+-extern	tsize_t TIFFWriteEncodedStrip(TIFF*, tstrip_t, tdata_t, tsize_t);
+-extern	tsize_t TIFFWriteRawStrip(TIFF*, tstrip_t, tdata_t, tsize_t);
+-extern	tsize_t TIFFWriteEncodedTile(TIFF*, ttile_t, tdata_t, tsize_t);
+-extern	tsize_t TIFFWriteRawTile(TIFF*, ttile_t, tdata_t, tsize_t);
+-extern	int TIFFDataWidth(TIFFDataType);    /* table of tag datatype widths */
+-extern	void TIFFSetWriteOffset(TIFF*, toff_t);
+-extern	void TIFFSwabShort(uint16*);
+-extern	void TIFFSwabLong(uint32*);
+-extern	void TIFFSwabDouble(double*);
+-extern	void TIFFSwabArrayOfShort(uint16*, unsigned long);
+-extern	void TIFFSwabArrayOfTriples(uint8*, unsigned long);
+-extern	void TIFFSwabArrayOfLong(uint32*, unsigned long);
+-extern	void TIFFSwabArrayOfDouble(double*, unsigned long);
+-extern	void TIFFReverseBits(unsigned char *, unsigned long);
+-extern	const unsigned char* TIFFGetBitRevTable(int);
++LIBTIFF_DLL_IMPEXP	tstrip_t TIFFComputeStrip(TIFF*, uint32, tsample_t);
++LIBTIFF_DLL_IMPEXP	tstrip_t TIFFNumberOfStrips(TIFF*);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFReadEncodedStrip(TIFF*, tstrip_t, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFReadRawStrip(TIFF*, tstrip_t, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFReadEncodedTile(TIFF*, ttile_t, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFReadRawTile(TIFF*, ttile_t, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFWriteEncodedStrip(TIFF*, tstrip_t, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFWriteRawStrip(TIFF*, tstrip_t, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFWriteEncodedTile(TIFF*, ttile_t, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	tsize_t TIFFWriteRawTile(TIFF*, ttile_t, tdata_t, tsize_t);
++LIBTIFF_DLL_IMPEXP	int TIFFDataWidth(TIFFDataType);    /* table of tag datatype widths */
++LIBTIFF_DLL_IMPEXP	void TIFFSetWriteOffset(TIFF*, toff_t);
++LIBTIFF_DLL_IMPEXP	void TIFFSwabShort(uint16*);
++LIBTIFF_DLL_IMPEXP	void TIFFSwabLong(uint32*);
++LIBTIFF_DLL_IMPEXP	void TIFFSwabDouble(double*);
++LIBTIFF_DLL_IMPEXP	void TIFFSwabArrayOfShort(uint16*, unsigned long);
++LIBTIFF_DLL_IMPEXP	void TIFFSwabArrayOfTriples(uint8*, unsigned long);
++LIBTIFF_DLL_IMPEXP	void TIFFSwabArrayOfLong(uint32*, unsigned long);
++LIBTIFF_DLL_IMPEXP	void TIFFSwabArrayOfDouble(double*, unsigned long);
++LIBTIFF_DLL_IMPEXP	void TIFFReverseBits(unsigned char *, unsigned long);
++LIBTIFF_DLL_IMPEXP	const unsigned char* TIFFGetBitRevTable(int);
+ 
+ #ifdef LOGLUV_PUBLIC
+ #define U_NEU		0.210526316
+ #define V_NEU		0.473684211
+ #define UVSCALE		410.
+-extern	double LogL16toY(int);
+-extern	double LogL10toY(int);
+-extern	void XYZtoRGB24(float*, uint8*);
+-extern	int uv_decode(double*, double*, int);
+-extern	void LogLuv24toXYZ(uint32, float*);
+-extern	void LogLuv32toXYZ(uint32, float*);
++LIBTIFF_DLL_IMPEXP	double LogL16toY(int);
++LIBTIFF_DLL_IMPEXP	double LogL10toY(int);
++LIBTIFF_DLL_IMPEXP	void XYZtoRGB24(float*, uint8*);
++LIBTIFF_DLL_IMPEXP	int uv_decode(double*, double*, int);
++LIBTIFF_DLL_IMPEXP	void LogLuv24toXYZ(uint32, float*);
++LIBTIFF_DLL_IMPEXP	void LogLuv32toXYZ(uint32, float*);
+ #if defined(c_plusplus) || defined(__cplusplus)
+-extern	int LogL16fromY(double, int = SGILOGENCODE_NODITHER);
+-extern	int LogL10fromY(double, int = SGILOGENCODE_NODITHER);
+-extern	int uv_encode(double, double, int = SGILOGENCODE_NODITHER);
+-extern	uint32 LogLuv24fromXYZ(float*, int = SGILOGENCODE_NODITHER);
+-extern	uint32 LogLuv32fromXYZ(float*, int = SGILOGENCODE_NODITHER);
++LIBTIFF_DLL_IMPEXP	int LogL16fromY(double, int = SGILOGENCODE_NODITHER);
++LIBTIFF_DLL_IMPEXP	int LogL10fromY(double, int = SGILOGENCODE_NODITHER);
++LIBTIFF_DLL_IMPEXP	int uv_encode(double, double, int = SGILOGENCODE_NODITHER);
++LIBTIFF_DLL_IMPEXP	uint32 LogLuv24fromXYZ(float*, int = SGILOGENCODE_NODITHER);
++LIBTIFF_DLL_IMPEXP	uint32 LogLuv32fromXYZ(float*, int = SGILOGENCODE_NODITHER);
+ #else
+-extern	int LogL16fromY(double, int);
+-extern	int LogL10fromY(double, int);
+-extern	int uv_encode(double, double, int);
+-extern	uint32 LogLuv24fromXYZ(float*, int);
+-extern	uint32 LogLuv32fromXYZ(float*, int);
++LIBTIFF_DLL_IMPEXP	int LogL16fromY(double, int);
++LIBTIFF_DLL_IMPEXP	int LogL10fromY(double, int);
++LIBTIFF_DLL_IMPEXP	int uv_encode(double, double, int);
++LIBTIFF_DLL_IMPEXP	uint32 LogLuv24fromXYZ(float*, int);
++LIBTIFF_DLL_IMPEXP	uint32 LogLuv32fromXYZ(float*, int);
+ #endif
+ #endif /* LOGLUV_PUBLIC */
+     
+-extern int TIFFCIELabToRGBInit(TIFFCIELabToRGB*, TIFFDisplay *, float*);
+-extern void TIFFCIELabToXYZ(TIFFCIELabToRGB *, uint32, int32, int32,
++LIBTIFF_DLL_IMPEXP int TIFFCIELabToRGBInit(TIFFCIELabToRGB*, TIFFDisplay *, float*);
++LIBTIFF_DLL_IMPEXP void TIFFCIELabToXYZ(TIFFCIELabToRGB *, uint32, int32, int32,
+ 			    float *, float *, float *);
+-extern void TIFFXYZToRGB(TIFFCIELabToRGB *, float, float, float,
++LIBTIFF_DLL_IMPEXP void TIFFXYZToRGB(TIFFCIELabToRGB *, float, float, float,
+ 			 uint32 *, uint32 *, uint32 *);
+ 
+-extern int TIFFYCbCrToRGBInit(TIFFYCbCrToRGB*, float*, float*);
+-extern void TIFFYCbCrtoRGB(TIFFYCbCrToRGB *, uint32, int32, int32,
++LIBTIFF_DLL_IMPEXP int TIFFYCbCrToRGBInit(TIFFYCbCrToRGB*, float*, float*);
++LIBTIFF_DLL_IMPEXP void TIFFYCbCrtoRGB(TIFFYCbCrToRGB *, uint32, int32, int32,
+ 			   uint32 *, uint32 *, uint32 *);
+ 
+ #if defined(c_plusplus) || defined(__cplusplus)
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/man/Makefile.in tiff-3.8.2-src/man/Makefile.in
+--- tiff-3.8.2-orig/man/Makefile.in	2006-03-23 15:44:45.000000000 +0100
++++ tiff-3.8.2-src/man/Makefile.in	2006-03-23 22:27:23.281250000 +0100
+@@ -40,6 +40,8 @@
+ # Process this file with automake to produce Makefile.in.
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -103,7 +105,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -144,7 +146,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -169,6 +171,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/port/Makefile.in tiff-3.8.2-src/port/Makefile.in
+--- tiff-3.8.2-orig/port/Makefile.in	2006-03-23 15:44:45.000000000 +0100
++++ tiff-3.8.2-src/port/Makefile.in	2006-03-23 22:27:23.296875000 +0100
+@@ -41,6 +41,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -116,7 +118,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -157,7 +159,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -182,6 +184,8 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+@@ -299,6 +303,11 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@$(DEPDIR)/strtoul.Plo@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dummy.Plo@am__quote@
+ 
++RCTOOL_COMPILE = RCTOOL
++# Rule to make compiled resource (Windows)
++%-rc.o: %.rc
++	windres --include-dir $(resdir) -i $< -o $@
++
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+ @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/test/Makefile.in tiff-3.8.2-src/test/Makefile.in
+--- tiff-3.8.2-orig/test/Makefile.in	2006-03-23 15:44:45.000000000 +0100
++++ tiff-3.8.2-src/test/Makefile.in	2006-03-23 22:27:23.296875000 +0100
+@@ -415,9 +415,10 @@ check-TESTS: $(TESTS)
+ 	list='$(TESTS)'; \
+ 	if test -n "$$list"; then \
+ 	  for tst in $$list; do \
+-	    if test -f ./$$tst; then dir=./; \
+-	    elif test -f $$tst; then dir=; \
++	    if test -f ./.libs/$$tst; then dir=./.libs/; \
++	    elif test -f .libs/$$tst; then dir=.libs/; \
+ 	    else dir="$(srcdir)/"; fi; \
++		echo $${dir}$$tst; \
+ 	    if $(TESTS_ENVIRONMENT) $${dir}$$tst; then \
+ 	      all=`expr $$all + 1`; \
+ 	      case " $(XFAIL_TESTS) " in \
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/tools/Makefile.in tiff-3.8.2-src/tools/Makefile.in
+--- tiff-3.8.2-orig/tools/Makefile.in	2006-03-23 15:44:46.000000000 +0100
++++ tiff-3.8.2-src/tools/Makefile.in	2006-03-23 22:27:23.312500000 +0100
+@@ -41,6 +41,8 @@
+ 
+ srcdir = @srcdir@
+ top_srcdir = @top_srcdir@
++resdir = @top_builddir@res
++vpath %.rc @top_builddir@res
+ VPATH = @srcdir@
+ pkgdatadir = $(datadir)/@PACKAGE@
+ pkglibdir = $(libdir)/@PACKAGE@
+@@ -69,7 +71,7 @@ bin_PROGRAMS = bmp2tiff$(EXEEXT) fax2ps$
+ 	tiff2ps$(EXEEXT) tiff2rgba$(EXEEXT) tiffcmp$(EXEEXT) \
+ 	tiffcp$(EXEEXT) tiffdither$(EXEEXT) tiffdump$(EXEEXT) \
+ 	tiffinfo$(EXEEXT) tiffmedian$(EXEEXT) tiffset$(EXEEXT) \
+-	tiffsplit$(EXEEXT) $(am__EXEEXT_1)
++	tiffsplit$(EXEEXT) $(am__EXEEXT_1) sgi2tiff$(EXEEXT) ycbcr$(EXEEXT)
+ @HAVE_OPENGL_TRUE@am__append_1 = tiffgt
+ EXTRA_PROGRAMS = sgi2tiff$(EXEEXT) sgisv$(EXEEXT) ycbcr$(EXEEXT)
+ subdir = tools
+@@ -89,88 +91,88 @@ CONFIG_CLEAN_FILES =
+ am__installdirs = "$(DESTDIR)$(bindir)"
+ binPROGRAMS_INSTALL = $(INSTALL_PROGRAM)
+ PROGRAMS = $(bin_PROGRAMS)
+-am_bmp2tiff_OBJECTS = bmp2tiff.$(OBJEXT)
++am_bmp2tiff_OBJECTS =  bmp2tiff-res.o bmp2tiff.$(OBJEXT)
+ bmp2tiff_OBJECTS = $(am_bmp2tiff_OBJECTS)
+ am__DEPENDENCIES_1 = $(top_builddir)/libtiff/libtiff.la
+ am__DEPENDENCIES_2 = $(top_builddir)/port/libport.la
+ bmp2tiff_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_fax2ps_OBJECTS = fax2ps.$(OBJEXT)
++am_fax2ps_OBJECTS =  fax2ps-res.o fax2ps.$(OBJEXT)
+ fax2ps_OBJECTS = $(am_fax2ps_OBJECTS)
+ fax2ps_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_fax2tiff_OBJECTS = fax2tiff.$(OBJEXT)
++am_fax2tiff_OBJECTS =  fax2tiff-res.o fax2tiff.$(OBJEXT)
+ fax2tiff_OBJECTS = $(am_fax2tiff_OBJECTS)
+ fax2tiff_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_gif2tiff_OBJECTS = gif2tiff.$(OBJEXT)
++am_gif2tiff_OBJECTS =  gif2tiff-res.o gif2tiff.$(OBJEXT)
+ gif2tiff_OBJECTS = $(am_gif2tiff_OBJECTS)
+ gif2tiff_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_pal2rgb_OBJECTS = pal2rgb.$(OBJEXT)
++am_pal2rgb_OBJECTS =  pal2rgb-res.o pal2rgb.$(OBJEXT)
+ pal2rgb_OBJECTS = $(am_pal2rgb_OBJECTS)
+ pal2rgb_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_ppm2tiff_OBJECTS = ppm2tiff.$(OBJEXT)
++am_ppm2tiff_OBJECTS =  ppm2tiff-res.o ppm2tiff.$(OBJEXT)
+ ppm2tiff_OBJECTS = $(am_ppm2tiff_OBJECTS)
+ ppm2tiff_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_ras2tiff_OBJECTS = ras2tiff.$(OBJEXT)
++am_ras2tiff_OBJECTS =  ras2tiff-res.o ras2tiff.$(OBJEXT)
+ ras2tiff_OBJECTS = $(am_ras2tiff_OBJECTS)
+ ras2tiff_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_raw2tiff_OBJECTS = raw2tiff.$(OBJEXT)
++am_raw2tiff_OBJECTS =  raw2tiff-res.o raw2tiff.$(OBJEXT)
+ raw2tiff_OBJECTS = $(am_raw2tiff_OBJECTS)
+ raw2tiff_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_rgb2ycbcr_OBJECTS = rgb2ycbcr.$(OBJEXT)
++am_rgb2ycbcr_OBJECTS =  rgb2ycbcr-res.o rgb2ycbcr.$(OBJEXT)
+ rgb2ycbcr_OBJECTS = $(am_rgb2ycbcr_OBJECTS)
+ rgb2ycbcr_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+ sgi2tiff_SOURCES = sgi2tiff.c
+-sgi2tiff_OBJECTS = sgi2tiff.$(OBJEXT)
+-sgi2tiff_LDADD = $(LDADD)
++sgi2tiff_OBJECTS = sgi2tiff-res.o sgi2tiff.$(OBJEXT)
++sgi2tiff_LDADD = $(LDADD) $(LIBTIFF) $(LIBPORT) -limage
+ sgisv_SOURCES = sgisv.c
+ sgisv_OBJECTS = sgisv.$(OBJEXT)
+ sgisv_LDADD = $(LDADD)
+-am_thumbnail_OBJECTS = thumbnail.$(OBJEXT)
++am_thumbnail_OBJECTS =  thumbnail-res.o thumbnail.$(OBJEXT)
+ thumbnail_OBJECTS = $(am_thumbnail_OBJECTS)
+ thumbnail_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiff2bw_OBJECTS = tiff2bw.$(OBJEXT)
++am_tiff2bw_OBJECTS =  tiff2bw-res.o tiff2bw.$(OBJEXT)
+ tiff2bw_OBJECTS = $(am_tiff2bw_OBJECTS)
+ tiff2bw_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiff2pdf_OBJECTS = tiff2pdf.$(OBJEXT)
++am_tiff2pdf_OBJECTS =  tiff2pdf-res.o tiff2pdf.$(OBJEXT)
+ tiff2pdf_OBJECTS = $(am_tiff2pdf_OBJECTS)
+ tiff2pdf_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiff2ps_OBJECTS = tiff2ps.$(OBJEXT)
++am_tiff2ps_OBJECTS =  tiff2ps-res.o tiff2ps.$(OBJEXT)
+ tiff2ps_OBJECTS = $(am_tiff2ps_OBJECTS)
+ tiff2ps_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiff2rgba_OBJECTS = tiff2rgba.$(OBJEXT)
++am_tiff2rgba_OBJECTS =  tiff2rgba-res.o tiff2rgba.$(OBJEXT)
+ tiff2rgba_OBJECTS = $(am_tiff2rgba_OBJECTS)
+ tiff2rgba_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiffcmp_OBJECTS = tiffcmp.$(OBJEXT)
++am_tiffcmp_OBJECTS =  tiffcmp-res.o tiffcmp.$(OBJEXT)
+ tiffcmp_OBJECTS = $(am_tiffcmp_OBJECTS)
+ tiffcmp_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiffcp_OBJECTS = tiffcp.$(OBJEXT)
++am_tiffcp_OBJECTS =  tiffcp-res.o tiffcp.$(OBJEXT)
+ tiffcp_OBJECTS = $(am_tiffcp_OBJECTS)
+ tiffcp_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiffdither_OBJECTS = tiffdither.$(OBJEXT)
++am_tiffdither_OBJECTS =  tiffdither-res.o tiffdither.$(OBJEXT)
+ tiffdither_OBJECTS = $(am_tiffdither_OBJECTS)
+ tiffdither_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiffdump_OBJECTS = tiffdump.$(OBJEXT)
++am_tiffdump_OBJECTS =  tiffdump-res.o tiffdump.$(OBJEXT)
+ tiffdump_OBJECTS = $(am_tiffdump_OBJECTS)
+ tiffdump_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiffgt_OBJECTS = tiffgt-tiffgt.$(OBJEXT)
++am_tiffgt_OBJECTS =  tiffgt-res.o tiffgt-tiffgt.$(OBJEXT)
+ tiffgt_OBJECTS = $(am_tiffgt_OBJECTS)
+ am__DEPENDENCIES_3 =
+ tiffgt_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2) \
+ 	$(am__DEPENDENCIES_3) $(am__DEPENDENCIES_3)
+-am_tiffinfo_OBJECTS = tiffinfo.$(OBJEXT)
++am_tiffinfo_OBJECTS =  tiffinfo-res.o tiffinfo.$(OBJEXT)
+ tiffinfo_OBJECTS = $(am_tiffinfo_OBJECTS)
+ tiffinfo_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiffmedian_OBJECTS = tiffmedian.$(OBJEXT)
++am_tiffmedian_OBJECTS =  tiffmedian-res.o tiffmedian.$(OBJEXT)
+ tiffmedian_OBJECTS = $(am_tiffmedian_OBJECTS)
+ tiffmedian_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiffset_OBJECTS = tiffset.$(OBJEXT)
++am_tiffset_OBJECTS =  tiffset-res.o tiffset.$(OBJEXT)
+ tiffset_OBJECTS = $(am_tiffset_OBJECTS)
+ tiffset_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+-am_tiffsplit_OBJECTS = tiffsplit.$(OBJEXT)
++am_tiffsplit_OBJECTS =  tiffsplit-res.o tiffsplit.$(OBJEXT)
+ tiffsplit_OBJECTS = $(am_tiffsplit_OBJECTS)
+ tiffsplit_DEPENDENCIES = $(am__DEPENDENCIES_1) $(am__DEPENDENCIES_2)
+ ycbcr_SOURCES = ycbcr.c
+-ycbcr_OBJECTS = ycbcr.$(OBJEXT)
+-ycbcr_LDADD = $(LDADD)
++ycbcr_OBJECTS = ycbcr-res.o ycbcr.$(OBJEXT)
++ycbcr_LDADD = $(LDADD) $(LIBTIFF) $(LIBPORT) -limage
+ DEFAULT_INCLUDES = -I. -I$(srcdir) -I$(top_builddir)/libtiff -I$(top_builddir)/libtiff
+ depcomp = $(SHELL) $(top_srcdir)/config/depcomp
+ am__depfiles_maybe = depfiles
+@@ -223,7 +225,7 @@ CXXCPP = @CXXCPP@
+ CXXDEPMODE = @CXXDEPMODE@
+ CXXFLAGS = @CXXFLAGS@
+ CYGPATH_W = @CYGPATH_W@
+-DEFS = @DEFS@
++DEFS = -DINSTALLDIR=\"$(prefix)\" -DENABLE_RELOCATABLE  @DEFS@
+ DEPDIR = @DEPDIR@
+ DLLTOOL = @DLLTOOL@
+ DUMPBIN = @DUMPBIN@
+@@ -251,7 +253,7 @@ INSTALL_PROGRAM = @INSTALL_PROGRAM@
+ INSTALL_SCRIPT = @INSTALL_SCRIPT@
+ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
+ LD = @LD@
+-LDFLAGS = @LDFLAGS@
++LDFLAGS = @LDFLAGS@ $(VERSADD)
+ LIBDIR = @LIBDIR@
+ LIBOBJS = @LIBOBJS@
+ LIBS = @LIBS@
+@@ -264,7 +266,7 @@ LIBTIFF_RELEASE_DATE = @LIBTIFF_RELEASE_
+ LIBTIFF_VERSION = @LIBTIFF_VERSION@
+ LIBTIFF_VERSION_INFO = @LIBTIFF_VERSION_INFO@
+ LIBTOOL = @LIBTOOL@
+-LN_S = @LN_S@
++LN_S = cp -fp
+ LTLIBOBJS = @LTLIBOBJS@
+ MAINT = @MAINT@
+ MAINTAINER_MODE_FALSE = @MAINTAINER_MODE_FALSE@
+@@ -289,6 +291,9 @@ SET_MAKE = @SET_MAKE@
+ SHELL = @SHELL@
+ STRIP = @STRIP@
+ VERSION = @VERSION@
++MAJOR=$(shell echo $(VERSION) | sed -e "s/\..*$$//")
++MINOR=$(shell echo $(VERSION) | sed -e "s/^[^\.]*\.0*\([^.]*\).*$$/\1/")
++VERSADD=-Wl,--major-image-version=$(MAJOR) -Wl,--minor-image-version=$(MINOR)
+ X_CFLAGS = @X_CFLAGS@
+ X_EXTRA_LIBS = @X_EXTRA_LIBS@
+ X_LIBS = @X_LIBS@
+@@ -570,6 +575,11 @@ distclean-compile:
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tiffsplit.Po@am__quote@
+ @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ycbcr.Po@am__quote@
+ 
++RCTOOL_COMPILE = RCTOOL
++# Rule to make compiled resource (Windows)
++%-res.o: %-res.rc
++	windres --include-dir $(resdir) -i $< -o $@
++
+ .c.o:
+ @am__fastdepCC_TRUE@	if $(COMPILE) -MT $@ -MD -MP -MF "$(DEPDIR)/$*.Tpo" -c -o $@ $<; \
+ @am__fastdepCC_TRUE@	then mv -f "$(DEPDIR)/$*.Tpo" "$(DEPDIR)/$*.Po"; else rm -f "$(DEPDIR)/$*.Tpo"; exit 1; fi
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/tools/fax2ps.c tiff-3.8.2-src/tools/fax2ps.c
+--- tiff-3.8.2-orig/tools/fax2ps.c	2006-03-21 17:42:50.000000000 +0100
++++ tiff-3.8.2-src/tools/fax2ps.c	2006-03-28 10:31:15.578125000 +0200
+@@ -373,13 +373,15 @@ main(int argc, char** argv)
+ 	int n;
+ 	FILE* fd;
+ 	char buf[16*1024];
++	char temp[1024];
+ 
+-	fd = tmpfile();
++	strcpy(temp, "fax2psXXXXXX");
++	fd = fdopen(mkstemp(temp), "w+");
+ 	if (fd == NULL) {
+-	    fprintf(stderr, "Could not create temporary file, exiting.\n");
+-	    fclose(fd);
++	    fprintf(stderr, "Could not create temp file \"%s\"\n", temp);
+ 	    exit(-2);
+ 	}
++	SET_BINARY(STDIN_FILENO);
+ 	while ((n = read(fileno(stdin), buf, sizeof (buf))) > 0)
+ 	    write(fileno(fd), buf, n);
+ 	lseek(fileno(fd), 0, SEEK_SET);
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/tools/fax2tiff.c tiff-3.8.2-src/tools/fax2tiff.c
+--- tiff-3.8.2-orig/tools/fax2tiff.c	2006-03-21 17:42:50.000000000 +0100
++++ tiff-3.8.2-src/tools/fax2tiff.c	2006-03-23 22:29:20.750000000 +0100
+@@ -216,7 +216,7 @@ main(int argc, char* argv[])
+ 	rowbuf = _TIFFmalloc(TIFFhowmany8(xsize));
+ 	refbuf = _TIFFmalloc(TIFFhowmany8(xsize));
+ 	if (rowbuf == NULL || refbuf == NULL) {
+-		fprintf(stderr, "%s: Not enough memory\n", argv[0]);
++		fprintf(stderr, "%s: Not enough memory (main)\n", argv[0]);
+ 		return (EXIT_FAILURE);
+ 	}
+ 
+@@ -354,7 +354,8 @@ copyFaxFile(TIFF* tifin, TIFF* tifout)
+ 	tifin->tif_rawdatasize = TIFFGetFileSize(tifin);
+ 	tifin->tif_rawdata = _TIFFmalloc(tifin->tif_rawdatasize);
+ 	if (tifin->tif_rawdata == NULL) {
+-		TIFFError(tifin->tif_name, "Not enough memory");
++        printf ("tifin->tif_rawdatasize: %ld\n", tifin->tif_rawdatasize);
++        TIFFError(tifin->tif_name, "%s: Not enough memory (copyFaxFile)");
+ 		return (0);
+ 	}
+ 	if (!ReadOK(tifin, tifin->tif_rawdata, tifin->tif_rawdatasize)) {
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/tools/ppm2tiff.c tiff-3.8.2-src/tools/ppm2tiff.c
+--- tiff-3.8.2-orig/tools/ppm2tiff.c	2006-03-03 13:09:45.000000000 +0100
++++ tiff-3.8.2-src/tools/ppm2tiff.c	2006-03-28 10:31:11.859375000 +0200
+@@ -41,11 +41,13 @@
+ extern int getopt(int, char**, char*);
+ #endif
+ 
+-#if defined(_WINDOWS) || defined(MSDOS)
++#ifndef BINMODE
++# if defined(_WINDOWS) || defined(MSDOS) || defined(__WIN32__) || defined(_WIN32)
+ #define BINMODE "b"
+-#else
++# else /* Windows */
+ #define	BINMODE
+-#endif
++# endif	/* Windows */
++#endif /* BINMODE */
+ 
+ #define	streq(a,b)	(strcmp(a,b) == 0)
+ #define	strneq(a,b,n)	(strncmp(a,b,n) == 0)
+@@ -124,6 +126,7 @@ main(int argc, char* argv[])
+ 	} else {
+ 		infile = "<stdin>";
+ 		in = stdin;
++		SET_BINARY(STDIN_FILENO);
+ 	}
+ 
+ 	if (fgetc(in) != 'P')
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/tools/ras2tiff.c tiff-3.8.2-src/tools/ras2tiff.c
+--- tiff-3.8.2-orig/tools/ras2tiff.c	2006-01-23 18:22:44.000000000 +0100
++++ tiff-3.8.2-src/tools/ras2tiff.c	2006-03-28 10:28:52.750000000 +0200
+@@ -45,8 +45,12 @@
+ #define	strneq(a,b,n)	(strncmp(a,b,n) == 0)
+ 
+ #ifndef BINMODE
++# if defined(_WINDOWS) || defined(MSDOS) || defined(__WIN32__) || defined(_WIN32)
++#  define BINMODE "b"
++# else /* Windows */
+ #define	BINMODE
+-#endif
++# endif	/* Windows */
++#endif /* BINMODE */
+ 
+ static	uint16 compression = (uint16) -1;
+ static	int jpegcolormode = JPEGCOLORMODE_RGB;
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/tools/sgi2tiff.c tiff-3.8.2-src/tools/sgi2tiff.c
+--- tiff-3.8.2-orig/tools/sgi2tiff.c	2006-01-23 18:22:44.000000000 +0100
++++ tiff-3.8.2-src/tools/sgi2tiff.c	2006-03-13 23:37:01.000000000 +0100
+@@ -94,10 +94,10 @@ main(int argc, char* argv[])
+ 		}
+ 	if (argc - optind != 2)
+ 		usage();
+-	in = iopen(argv[optind], "r");
++	in = iopen(argv[optind], "r" BINMODE);
+ 	if (in == NULL)
+ 		return (-1);
+-	out = TIFFOpen(argv[optind+1], "w");
++	out = TIFFOpen(argv[optind+1], "w" BINMODE);
+ 	if (out == NULL)
+ 		return (-2);
+ 	TIFFSetField(out, TIFFTAG_IMAGEWIDTH, (uint32) in->xsize);
+@@ -160,7 +160,7 @@ processCompressOptions(char* opt)
+ 	else if (strneq(opt, "jpeg", 4)) {
+ 		char* cp = strchr(opt, ':');
+ 
+-                defcompression = COMPRESSION_JPEG;
++                compression = COMPRESSION_JPEG;
+                 while( cp )
+                 {
+                     if (isdigit((int)cp[1]))
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/tools/tiff2pdf.c tiff-3.8.2-src/tools/tiff2pdf.c
+--- tiff-3.8.2-orig/tools/tiff2pdf.c	2006-03-21 17:42:51.000000000 +0100
++++ tiff-3.8.2-src/tools/tiff2pdf.c	2006-03-28 10:31:07.390625000 +0200
+@@ -698,6 +698,7 @@ int main(int argc, char** argv){
+ #if !defined(_WIN32) || defined(AVOID_WIN32_FILEIO)
+ 		close(output->tif_fd);
+ 		output->tif_fd=(int)fileno(stdout);
++		SET_BINARY(STDOUT_FILENO);		
+ #else
+ 		CloseHandle((HANDLE) output->tif_fd);
+ 		output->tif_fd=(int)GetStdHandle(STD_OUTPUT_HANDLE);
+diff -ipuwr --binary --strip-trailing-cr -x '*.bak' -x '*.orig' -x '*.rej' -x '*.new' -x '*~' -x debian -x '*.po' -x '*.pot' tiff-3.8.2-orig/tools/tiffdump.c tiff-3.8.2-src/tools/tiffdump.c
+--- tiff-3.8.2-orig/tools/tiffdump.c	2005-12-02 17:01:33.000000000 +0100
++++ tiff-3.8.2-src/tools/tiffdump.c	2006-03-13 22:42:23.000000000 +0100
+@@ -323,7 +323,7 @@ ReadDirectory(int fd, unsigned ix, off_t
+ 			Error("Invalid count for tag %u", dp->tdir_tag);
+ 			continue;
+                 }
+-		if (space <= 4) {
++		if (space >= 0 && space <= 4) {
+ 			switch (dp->tdir_type) {
+ 			case TIFF_FLOAT:
+ 			case TIFF_UNDEFINED:

@@ -1,0 +1,29 @@
+計測データ取得 retrieve SDK について
+					Ver 12.0.0	2008.05.25 LABCOM
+					Ver 13.0.0	2009.05.27 LABCOM
+
+            +- include 
+            |   +- retrieve.h   (retrieve用のヘッダソース）
+            |   +- dbstore.h　　(dbstore用のヘッダソース）
+            |
+            +- lib 　(32ビット用）
+            |   +- retrieve.lib   (retrieve.dllのインポートライブラリ）
+            |   +- dbstoredll.lib (dbstore.dllのインポートライブラリ）
+            |
+            +- lib64　(64ビット用）
+            |   +- retrieve.lib
+            |   +- dbstoredll.lib
+            |
+            +- sample
+            |   +- Retrieve_main.cpp  (retrieve用のサンプルソース）
+            |   +- retrieve_t_main.cpp(retrieve_t用のサンプルソース）
+            |   +- Sample.sln　　　　（Microsoft VC++Express2005用　ソリューションファイル）
+            |   +- Retrieve.vcprj　　（Microsoft VC++Express2005用　プロジェクトファイル）
+            |   +- retrieve_t.vcprj　（Microsoft VC++Express2005用　プロジェクトファイル）
+            |
+            +- retrieve_api.txt  (retrieve用APIの説明）
+            |
+            +- readme.sdk  (このファイル）
+ 
+  ★★★  本SDKに関してお気づきの点・バグレポートなどがありましたら
+		LABCOM@LHD.nifs.ac.jp 宛までご連絡をおねがいします  ★★★
